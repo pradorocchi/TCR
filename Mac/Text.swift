@@ -19,6 +19,7 @@ class Text:NSTextView {
         drawsBackground = false
         isRichText = false
         insertionPointColor = .halo
+        font = .light(32)
         width = widthAnchor.constraint(greaterThanOrEqualToConstant: 0)
         height = heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
         width.isActive = true
@@ -44,5 +45,6 @@ class Text:NSTextView {
         let size = layoutManager!.usedRect(for:textContainer!).size
         width.constant = size.width + 4
         height.constant = size.height
+        print(width.constant)
     }
 }
