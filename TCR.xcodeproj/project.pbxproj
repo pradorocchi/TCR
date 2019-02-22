@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		20498A272220388800DB4D71 /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20498A242220388800DB4D71 /* Mac.storyboard */; };
 		20498A292220388800DB4D71 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A262220388800DB4D71 /* App.swift */; };
+		20498A2C22203C2500DB4D71 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A2B22203C2500DB4D71 /* Extensions.swift */; };
+		20498A2E22203C6700DB4D71 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A2D22203C6700DB4D71 /* Text.swift */; };
+		20498A3022203C8C00DB4D71 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A2F22203C8C00DB4D71 /* Storage.swift */; };
+		20498A3222203C9F00DB4D71 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A3122203C9F00DB4D71 /* Layout.swift */; };
+		20498A3622203CCE00DB4D71 /* SFMono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20498A3422203CCE00DB4D71 /* SFMono-Light.otf */; };
+		20498A3722203CCE00DB4D71 /* SFMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20498A3522203CCE00DB4D71 /* SFMono-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		20498A252220388800DB4D71 /* Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mac.plist; sourceTree = "<group>"; };
 		20498A262220388800DB4D71 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		20498A2A2220389500DB4D71 /* TCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20498A2B22203C2500DB4D71 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		20498A2D22203C6700DB4D71 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		20498A2F22203C8C00DB4D71 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		20498A3122203C9F00DB4D71 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		20498A3422203CCE00DB4D71 /* SFMono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Light.otf"; sourceTree = "<group>"; };
+		20498A3522203CCE00DB4D71 /* SFMono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				20498A222220388800DB4D71 /* Mac */,
+				20498A3322203CCE00DB4D71 /* Shared */,
 				20498A202220387400DB4D71 /* LICENSE */,
 				20498A1F2220387400DB4D71 /* README.md */,
 				20498A212220387400DB4D71 /* .gitignore */,
@@ -48,11 +61,24 @@
 			isa = PBXGroup;
 			children = (
 				20498A232220388800DB4D71 /* Mac.entitlements */,
-				20498A242220388800DB4D71 /* Mac.storyboard */,
 				20498A252220388800DB4D71 /* Mac.plist */,
+				20498A242220388800DB4D71 /* Mac.storyboard */,
 				20498A262220388800DB4D71 /* App.swift */,
+				20498A2B22203C2500DB4D71 /* Extensions.swift */,
+				20498A3122203C9F00DB4D71 /* Layout.swift */,
+				20498A2F22203C8C00DB4D71 /* Storage.swift */,
+				20498A2D22203C6700DB4D71 /* Text.swift */,
 			);
 			path = Mac;
+			sourceTree = "<group>";
+		};
+		20498A3322203CCE00DB4D71 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				20498A3422203CCE00DB4D71 /* SFMono-Light.otf */,
+				20498A3522203CCE00DB4D71 /* SFMono-Bold.otf */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,7 +138,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20498A3622203CCE00DB4D71 /* SFMono-Light.otf in Resources */,
 				20498A272220388800DB4D71 /* Mac.storyboard in Resources */,
+				20498A3722203CCE00DB4D71 /* SFMono-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +152,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				20498A292220388800DB4D71 /* App.swift in Sources */,
+				20498A3022203C8C00DB4D71 /* Storage.swift in Sources */,
+				20498A3222203C9F00DB4D71 /* Layout.swift in Sources */,
+				20498A2E22203C6700DB4D71 /* Text.swift in Sources */,
+				20498A2C22203C2500DB4D71 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
