@@ -7,20 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20498A102220378800DB4D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A0F2220378800DB4D71 /* AppDelegate.swift */; };
-		20498A122220378800DB4D71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A112220378800DB4D71 /* ViewController.swift */; };
-		20498A142220378A00DB4D71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20498A132220378A00DB4D71 /* Assets.xcassets */; };
-		20498A172220378A00DB4D71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20498A152220378A00DB4D71 /* Main.storyboard */; };
+		20498A272220388800DB4D71 /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20498A242220388800DB4D71 /* Mac.storyboard */; };
+		20498A292220388800DB4D71 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A262220388800DB4D71 /* App.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20498A0C2220378800DB4D71 /* TCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		20498A0F2220378800DB4D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20498A112220378800DB4D71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		20498A132220378A00DB4D71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		20498A162220378A00DB4D71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		20498A182220378A00DB4D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20498A192220378A00DB4D71 /* TCR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TCR.entitlements; sourceTree = "<group>"; };
+		20498A1F2220387400DB4D71 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		20498A202220387400DB4D71 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		20498A212220387400DB4D71 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		20498A232220388800DB4D71 /* Mac.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Mac.entitlements; sourceTree = "<group>"; };
+		20498A242220388800DB4D71 /* Mac.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mac.storyboard; sourceTree = "<group>"; };
+		20498A252220388800DB4D71 /* Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mac.plist; sourceTree = "<group>"; };
+		20498A262220388800DB4D71 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		20498A2A2220389500DB4D71 /* TCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,30 +36,23 @@
 		20498A032220378800DB4D71 = {
 			isa = PBXGroup;
 			children = (
-				20498A0E2220378800DB4D71 /* TCR */,
-				20498A0D2220378800DB4D71 /* Products */,
+				20498A222220388800DB4D71 /* Mac */,
+				20498A202220387400DB4D71 /* LICENSE */,
+				20498A1F2220387400DB4D71 /* README.md */,
+				20498A212220387400DB4D71 /* .gitignore */,
+				20498A2A2220389500DB4D71 /* TCR.app */,
 			);
 			sourceTree = "<group>";
 		};
-		20498A0D2220378800DB4D71 /* Products */ = {
+		20498A222220388800DB4D71 /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				20498A0C2220378800DB4D71 /* TCR.app */,
+				20498A232220388800DB4D71 /* Mac.entitlements */,
+				20498A242220388800DB4D71 /* Mac.storyboard */,
+				20498A252220388800DB4D71 /* Mac.plist */,
+				20498A262220388800DB4D71 /* App.swift */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		20498A0E2220378800DB4D71 /* TCR */ = {
-			isa = PBXGroup;
-			children = (
-				20498A0F2220378800DB4D71 /* AppDelegate.swift */,
-				20498A112220378800DB4D71 /* ViewController.swift */,
-				20498A132220378A00DB4D71 /* Assets.xcassets */,
-				20498A152220378A00DB4D71 /* Main.storyboard */,
-				20498A182220378A00DB4D71 /* Info.plist */,
-				20498A192220378A00DB4D71 /* TCR.entitlements */,
-			);
-			path = TCR;
+			path = Mac;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,7 +72,7 @@
 			);
 			name = TCR;
 			productName = TCR;
-			productReference = 20498A0C2220378800DB4D71 /* TCR.app */;
+			productReference = 20498A2A2220389500DB4D71 /* TCR.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,10 +96,9 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 20498A032220378800DB4D71;
-			productRefGroup = 20498A0D2220378800DB4D71 /* Products */;
+			productRefGroup = 20498A032220378800DB4D71;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -121,8 +112,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20498A142220378A00DB4D71 /* Assets.xcassets in Resources */,
-				20498A172220378A00DB4D71 /* Main.storyboard in Resources */,
+				20498A272220388800DB4D71 /* Mac.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,23 +123,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20498A122220378800DB4D71 /* ViewController.swift in Sources */,
-				20498A102220378800DB4D71 /* AppDelegate.swift in Sources */,
+				20498A292220388800DB4D71 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		20498A152220378A00DB4D71 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				20498A162220378A00DB4D71 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		20498A1A2220378A00DB4D71 /* Debug */ = {
@@ -203,13 +181,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -247,7 +227,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -258,50 +238,52 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		20498A1D2220378A00DB4D71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TCR/TCR.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Mac/Mac.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
-				INFOPLIST_FILE = TCR/Info.plist;
+				INFOPLIST_FILE = Mac/Mac.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = TCR.TCR;
+				PRODUCT_BUNDLE_IDENTIFIER = TCR.Mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		20498A1E2220378A00DB4D71 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TCR/TCR.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Mac/Mac.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
-				INFOPLIST_FILE = TCR/Info.plist;
+				INFOPLIST_FILE = Mac/Mac.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = TCR.TCR;
+				PRODUCT_BUNDLE_IDENTIFIER = TCR.Mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
