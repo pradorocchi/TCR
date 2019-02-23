@@ -1,17 +1,18 @@
 import AppKit
 
 class Text:NSTextView {
-    private weak var width:NSLayoutConstraint!
+    static let shared = Text()
     private weak var height:NSLayoutConstraint!
     override var string:String { didSet { adjustConstraints() } }
     
-    init() {
+    private init() {
         let container = NSTextContainer()
         let storage = Storage()
         let layout = Layout()
         storage.addLayoutManager(layout)
         layout.addTextContainer(container)
-        container.lineBreakMode = .byTruncatingHead
+        container.lineBreakMode = .byCharWrapping
+        container.widthTracksTextView = true
         super.init(frame:.zero, textContainer:container)
         translatesAutoresizingMaskIntoConstraints = false
         isContinuousSpellCheckingEnabled = true
@@ -19,10 +20,9 @@ class Text:NSTextView {
         drawsBackground = false
         isRichText = false
         insertionPointColor = .halo
+        textContainerInset = NSSize(width: 50, height: 50)
         font = .light(32)
-        width = widthAnchor.constraint(greaterThanOrEqualToConstant: 0)
         height = heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
-        width.isActive = true
         height.isActive = true
         adjustConstraints()
     }
@@ -42,9 +42,6 @@ class Text:NSTextView {
     
     private func adjustConstraints() {
         layoutManager!.ensureLayout(for:textContainer!)
-        let size = layoutManager!.usedRect(for:textContainer!).size
-        width.constant = size.width + 4
-        height.constant = size.height
-        print(width.constant)
+        height.constant = layoutManager!.usedRect(for:textContainer!).size.height + 100
     }
 }

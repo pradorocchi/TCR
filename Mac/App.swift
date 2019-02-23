@@ -13,35 +13,24 @@ import AppKit
         backgroundColor = .black
         NSApp.delegate = self
         App.shared = self
-        
+    
         let scroll = NSScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
         scroll.drawsBackground = false
         scroll.hasVerticalScroller = true
-        scroll.hasHorizontalScroller = true
-        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.hasHorizontalScroller = false
+        scroll.verticalScroller!.controlSize = .mini
         scroll.verticalScrollElasticity = .allowed
-        scroll.horizontalScrollElasticity = .allowed
-        scroll.documentView = NSView()
-        scroll.documentView!.translatesAutoresizingMaskIntoConstraints = false
+        scroll.horizontalScrollElasticity = .none
+        scroll.documentView = Text.shared
         contentView!.addSubview(scroll)
-        
-        let text = Text()
-        text.string = "hello world"
-        scroll.documentView!.addSubview(text)
         
         scroll.topAnchor.constraint(equalTo: contentView!.topAnchor).isActive = true
         scroll.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor).isActive = true
         scroll.leftAnchor.constraint(equalTo: contentView!.leftAnchor).isActive = true
         scroll.rightAnchor.constraint(equalTo: contentView!.rightAnchor).isActive = true
         
-        scroll.documentView!.topAnchor.constraint(equalTo: scroll.topAnchor).isActive = true
-        scroll.documentView!.leftAnchor.constraint(equalTo: scroll.leftAnchor).isActive = true
-        scroll.documentView!.bottomAnchor.constraint(equalTo: text.bottomAnchor).isActive = true
-        scroll.documentView!.rightAnchor.constraint(equalTo: text.rightAnchor).isActive = true
-        
-        text.topAnchor.constraint(equalTo: scroll.documentView!.topAnchor).isActive = true
-        text.leftAnchor.constraint(equalTo: scroll.documentView!.leftAnchor).isActive = true
-        text.widthAnchor.constraint(greaterThanOrEqualTo: scroll.widthAnchor).isActive = true
-        text.heightAnchor.constraint(greaterThanOrEqualTo: scroll.heightAnchor).isActive = true
+        Text.shared.widthAnchor.constraint(equalTo: scroll.widthAnchor).isActive = true
+        Text.shared.heightAnchor.constraint(greaterThanOrEqualTo: scroll.heightAnchor).isActive = true
     }
 }
