@@ -20,7 +20,7 @@ class Text:NSTextView {
         drawsBackground = false
         isRichText = false
         insertionPointColor = .halo
-        textContainerInset = NSSize(width: 50, height: 50)
+        textContainerInset = NSSize(width: 50, height: 30)
         font = .light(32)
         height = heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
         height.isActive = true
@@ -42,6 +42,6 @@ class Text:NSTextView {
     
     private func adjustConstraints() {
         layoutManager!.ensureLayout(for:textContainer!)
-        height.constant = layoutManager!.usedRect(for:textContainer!).size.height + 100
+        height.constant = layoutManager!.usedRect(for:textContainer!).size.height + (textContainerInset.height * 2)
     }
 }

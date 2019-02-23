@@ -15,6 +15,7 @@
 		20498A3222203C9F00DB4D71 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A3122203C9F00DB4D71 /* Layout.swift */; };
 		20498A3622203CCE00DB4D71 /* SFMono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20498A3422203CCE00DB4D71 /* SFMono-Light.otf */; };
 		20498A3722203CCE00DB4D71 /* SFMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20498A3522203CCE00DB4D71 /* SFMono-Bold.otf */; };
+		2097FCC0222199A500C2FC5E /* Ruler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097FCBF222199A500C2FC5E /* Ruler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		20498A3122203C9F00DB4D71 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		20498A3422203CCE00DB4D71 /* SFMono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Light.otf"; sourceTree = "<group>"; };
 		20498A3522203CCE00DB4D71 /* SFMono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Bold.otf"; sourceTree = "<group>"; };
+		2097FCBF222199A500C2FC5E /* Ruler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,12 +50,12 @@
 		20498A032220378800DB4D71 = {
 			isa = PBXGroup;
 			children = (
+				20498A212220387400DB4D71 /* .gitignore */,
+				20498A202220387400DB4D71 /* LICENSE */,
+				20498A2A2220389500DB4D71 /* TCR.app */,
+				20498A1F2220387400DB4D71 /* README.md */,
 				20498A222220388800DB4D71 /* Mac */,
 				20498A3322203CCE00DB4D71 /* Shared */,
-				20498A202220387400DB4D71 /* LICENSE */,
-				20498A1F2220387400DB4D71 /* README.md */,
-				20498A212220387400DB4D71 /* .gitignore */,
-				20498A2A2220389500DB4D71 /* TCR.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +70,7 @@
 				20498A3122203C9F00DB4D71 /* Layout.swift */,
 				20498A2F22203C8C00DB4D71 /* Storage.swift */,
 				20498A2D22203C6700DB4D71 /* Text.swift */,
+				2097FCBF222199A500C2FC5E /* Ruler.swift */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -75,8 +78,8 @@
 		20498A3322203CCE00DB4D71 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				20498A3422203CCE00DB4D71 /* SFMono-Light.otf */,
 				20498A3522203CCE00DB4D71 /* SFMono-Bold.otf */,
+				20498A3422203CCE00DB4D71 /* SFMono-Light.otf */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			files = (
 				20498A292220388800DB4D71 /* App.swift in Sources */,
 				20498A3022203C8C00DB4D71 /* Storage.swift in Sources */,
+				2097FCC0222199A500C2FC5E /* Ruler.swift in Sources */,
 				20498A3222203C9F00DB4D71 /* Layout.swift in Sources */,
 				20498A2E22203C6700DB4D71 /* Text.swift in Sources */,
 				20498A2C22203C2500DB4D71 /* Extensions.swift in Sources */,

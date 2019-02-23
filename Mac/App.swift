@@ -18,11 +18,12 @@ import AppKit
         scroll.translatesAutoresizingMaskIntoConstraints = false
         scroll.drawsBackground = false
         scroll.hasVerticalScroller = true
-        scroll.hasHorizontalScroller = false
         scroll.verticalScroller!.controlSize = .mini
         scroll.verticalScrollElasticity = .allowed
         scroll.horizontalScrollElasticity = .none
         scroll.documentView = Text.shared
+        scroll.verticalRulerView = Ruler(scroll)
+        scroll.rulersVisible = true
         contentView!.addSubview(scroll)
         
         scroll.topAnchor.constraint(equalTo: contentView!.topAnchor).isActive = true
