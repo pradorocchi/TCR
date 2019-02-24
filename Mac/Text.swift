@@ -1,19 +1,23 @@
 import AppKit
 
-class Text:NSTextView {
+class Text: NSTextView {
     static let shared = Text()
-    private weak var height:NSLayoutConstraint!
-    override var string:String { didSet { adjustConstraints() } }
+    override var string: String { didSet { adjust() } }
+    var size = CGFloat(20) { didSet { resize() } }
+    var glyps: NSRange { return layoutManager!.glyphRange(forBoundingRect: visibleRect, in: textContainer!) }
+    private(set) var bold: NSFont!
+    private(set) var light: NSFont!
+    private weak var height: NSLayoutConstraint!
     
     private init() {
-        let container = NSTextContainer()
         let storage = Storage()
-        let layout = Layout()
-        storage.addLayoutManager(layout)
-        layout.addTextContainer(container)
-        container.lineBreakMode = .byCharWrapping
-        container.widthTracksTextView = true
-        super.init(frame:.zero, textContainer:container)
+        super.init(frame: .zero, textContainer: {
+            storage.addLayoutManager($1)
+            $1.addTextContainer($0)
+            $0.lineBreakMode = .byCharWrapping
+            $0.widthTracksTextView = true
+            return $0
+        } (NSTextContainer(), Layout()) )
         translatesAutoresizingMaskIntoConstraints = false
         isContinuousSpellCheckingEnabled = true
         allowsUndo = true
@@ -21,28 +25,34 @@ class Text:NSTextView {
         isRichText = false
         insertionPointColor = .halo
         textContainerInset = NSSize(width: 50, height: 30)
-        font = .light(32)
         height = heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
         height.isActive = true
-        adjustConstraints()
+        resize()
+        adjust()
     }
     
-    required init?(coder:NSCoder) { return nil }
+    required init?(coder: NSCoder) { return nil }
     
-    override func drawInsertionPoint(in rect:NSRect, color:NSColor, turnedOn:Bool) {
+    override func drawInsertionPoint(in rect: NSRect, color: NSColor, turnedOn: Bool) {
         var rect = rect
         rect.size.width += 4
-        super.drawInsertionPoint(in:rect, color:color, turnedOn:turnedOn)
+        super.drawInsertionPoint(in: rect, color: color, turnedOn: turnedOn)
     }
     
     override func didChangeText() {
         super.didChangeText()
-        adjustConstraints()
+        adjust()
     }
     
-    private func adjustConstraints() {
-        layoutManager!.ensureLayout(for:textContainer!)
-        height.constant = layoutManager!.usedRect(for:textContainer!).size.height + (textContainerInset.height * 2)
+    private func adjust() {
+        layoutManager!.ensureLayout(for: textContainer!)
+        height.constant = layoutManager!.usedRect(for: textContainer!).size.height + (textContainerInset.height * 2)
         Ruler.shared.setNeedsDisplay(visibleRect)
+    }
+    
+    private func resize() {
+        light = .light(size)
+        bold = .bold(size)
+        font = light
     }
 }

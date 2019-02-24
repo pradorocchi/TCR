@@ -2,8 +2,6 @@ import AppKit
 
 class Storage:NSTextStorage {
     override var string:String { return storage.string }
-    private let text = NSFont.light(32)
-    private let header = NSFont.bold(32)
     private let storage = NSTextStorage()
     
     override func attributes(at:Int, effectiveRange:NSRangePointer?) -> [NSAttributedString.Key:Any] {
@@ -22,13 +20,13 @@ class Storage:NSTextStorage {
     override func processEditing() {
         super.processEditing()
         storage.removeAttribute(.font, range:NSMakeRange(0, storage.length))
-        string.indices.reduce(into: (string.startIndex, text, [(NSFont, Range)]()) ) {
+        string.indices.reduce(into: (string.startIndex, Text.shared.light!, [(NSFont, Range)]()) ) {
             if string.index(after:$1) == string.endIndex {
-                $0.2.append((string[$1] == "#" ? header : $0.1, $0.0 ..< string.index(after:$1)))
+                $0.2.append((string[$1] == "#" ? Text.shared.bold : $0.1, $0.0 ..< string.index(after:$1)))
             } else if string[$1] == "#" || string[$1] == "\n" {
                 $0.2.append(($0.1, $0.0 ..< $1))
                 $0.0 = $1
-                $0.1 = string[$1] == "#" ? header : text
+                $0.1 = string[$1] == "#" ? Text.shared.bold : Text.shared.light
             } }.2.forEach { storage.addAttribute(.font, value:$0.0, range:NSRange($0.1, in:string)) }
     }
 }

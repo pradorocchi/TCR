@@ -13,25 +13,11 @@ import AppKit
         backgroundColor = .black
         NSApp.delegate = self
         App.shared = self
-    
-        let scroll = NSScrollView()
-        scroll.translatesAutoresizingMaskIntoConstraints = false
-        scroll.drawsBackground = false
-        scroll.hasVerticalScroller = true
-        scroll.verticalScroller!.controlSize = .mini
-        scroll.verticalScrollElasticity = .allowed
-        scroll.horizontalScrollElasticity = .none
-        scroll.documentView = Text.shared
-        scroll.verticalRulerView = Ruler.shared
-        scroll.rulersVisible = true
-        contentView!.addSubview(scroll)
+        contentView!.addSubview(Scroll.shared)
         
-        scroll.topAnchor.constraint(equalTo: contentView!.topAnchor).isActive = true
-        scroll.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor).isActive = true
-        scroll.leftAnchor.constraint(equalTo: contentView!.leftAnchor).isActive = true
-        scroll.rightAnchor.constraint(equalTo: contentView!.rightAnchor).isActive = true
-        
-        Text.shared.widthAnchor.constraint(equalTo: scroll.widthAnchor).isActive = true
-        Text.shared.heightAnchor.constraint(greaterThanOrEqualTo: scroll.heightAnchor).isActive = true
+        Scroll.shared.topAnchor.constraint(equalTo: contentView!.topAnchor).isActive = true
+        Scroll.shared.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor).isActive = true
+        Scroll.shared.leftAnchor.constraint(equalTo: contentView!.leftAnchor).isActive = true
+        Scroll.shared.rightAnchor.constraint(equalTo: contentView!.rightAnchor).isActive = true
     }
 }
