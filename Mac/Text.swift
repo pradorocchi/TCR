@@ -9,21 +9,19 @@ class Text: NSTextView {
     private weak var height: NSLayoutConstraint!
     
     private init() {
-        let storage = Storage()
         super.init(frame: .zero, textContainer: {
-            storage.addLayoutManager($1)
-            $1.addTextContainer($0)
+            Storage.shared.addLayoutManager(Layout.shared)
+            Layout.shared.addTextContainer($0)
             $0.lineBreakMode = .byCharWrapping
             $0.widthTracksTextView = true
             return $0
-        } (NSTextContainer(), Layout()) )
+        } (NSTextContainer()) )
         translatesAutoresizingMaskIntoConstraints = false
-        isContinuousSpellCheckingEnabled = true
         allowsUndo = true
         drawsBackground = false
         isRichText = false
         insertionPointColor = .halo
-        textContainerInset = NSSize(width: 50, height: 30)
+        textContainerInset = NSSize(width: 20, height: 30)
         height = heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
         height.isActive = true
         resize()
@@ -34,7 +32,7 @@ class Text: NSTextView {
     
     override func drawInsertionPoint(in rect: NSRect, color: NSColor, turnedOn: Bool) {
         var rect = rect
-        rect.size.width += 4
+        rect.size.width += 2
         super.drawInsertionPoint(in: rect, color: color, turnedOn: turnedOn)
     }
     
