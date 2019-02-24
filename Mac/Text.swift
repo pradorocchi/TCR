@@ -43,5 +43,6 @@ class Text:NSTextView {
     private func adjustConstraints() {
         layoutManager!.ensureLayout(for:textContainer!)
         height.constant = layoutManager!.usedRect(for:textContainer!).size.height + (textContainerInset.height * 2)
+        Ruler.shared.setNeedsDisplay(visibleRect)
     }
 }

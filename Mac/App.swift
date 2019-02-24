@@ -22,7 +22,7 @@ import AppKit
         scroll.verticalScrollElasticity = .allowed
         scroll.horizontalScrollElasticity = .none
         scroll.documentView = Text.shared
-        scroll.verticalRulerView = Ruler(scroll)
+        scroll.verticalRulerView = Ruler.shared
         scroll.rulersVisible = true
         contentView!.addSubview(scroll)
         
