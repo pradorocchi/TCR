@@ -4,7 +4,6 @@ class Text: NSTextView {
     static let shared = Text()
     override var string: String { didSet { adjust() } }
     var size = CGFloat(20) { didSet { resize() } }
-    var glyps: NSRange { return layoutManager!.glyphRange(forBoundingRect: visibleRect, in: textContainer!) }
     private(set) var bold: NSFont!
     private(set) var light: NSFont!
     private weak var height: NSLayoutConstraint!

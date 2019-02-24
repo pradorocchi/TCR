@@ -70,10 +70,10 @@
 				20498A262220388800DB4D71 /* App.swift */,
 				20498A2B22203C2500DB4D71 /* Extensions.swift */,
 				20498A3122203C9F00DB4D71 /* Layout.swift */,
-				20498A2F22203C8C00DB4D71 /* Storage.swift */,
-				20498A2D22203C6700DB4D71 /* Text.swift */,
 				2097FCBF222199A500C2FC5E /* Ruler.swift */,
 				200554292222A84E00DCFA33 /* Scroll.swift */,
+				20498A2F22203C8C00DB4D71 /* Storage.swift */,
+				20498A2D22203C6700DB4D71 /* Text.swift */,
 			);
 			path = Mac;
 			sourceTree = "<group>";

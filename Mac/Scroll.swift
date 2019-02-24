@@ -16,7 +16,7 @@ class Scroll: NSScrollView {
         rulersVisible = true
         
         Ruler.shared.scrollView = self
-        Text.shared.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        Text.shared.widthAnchor.constraint(equalTo: widthAnchor, constant: Text.shared.textContainerInset.height * -2).isActive = true
         Text.shared.heightAnchor.constraint(greaterThanOrEqualTo: heightAnchor).isActive = true
     }
     

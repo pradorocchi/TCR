@@ -11,7 +11,44 @@ class Ruler: NSRulerView {
     required init(coder: NSCoder) { super.init(coder: coder) }
     
     override func draw(_ rect: NSRect) {
-        
+        let range = Text.shared.layoutManager!.glyphRange(forBoundingRect: Text.shared.visibleRect,
+                                                          in: Text.shared.textContainer!)
+        var line = (try! NSRegularExpression(pattern: "\n")).numberOfMatches(in: Text.shared.string, options: [], range: NSMakeRange(0, Text.shared.layoutManager!.characterIndexForGlyph(at: range.location))) + 1
+        var current = range.lowerBound
+        while current < range.upperBound {
+            
+            let characterRangeForStringLine = (Text.shared.string as NSString).lineRange(
+                for: NSMakeRange( Text.shared.layoutManager!.characterIndexForGlyph(at: current), 0 )
+            )
+            let glyphRangeForStringLine = Text.shared.layoutManager!.glyphRange(forCharacterRange: characterRangeForStringLine, actualCharacterRange: nil)
+            
+            var glyphIndexForGlyphLine = current
+            var glyphLineCount = 0
+            
+            while ( glyphIndexForGlyphLine < NSMaxRange(glyphRangeForStringLine) ) {
+                
+                // See if the current line in the string spread across
+                // several lines of glyphs
+                var effectiveRange = NSMakeRange(0, 0)
+                
+                // Range of current "line of glyphs". If a line is wrapped,
+                // then it will have more than one "line of glyphs"
+                let lineRect = Text.shared.layoutManager!.lineFragmentRect(forGlyphAt: glyphIndexForGlyphLine, effectiveRange: &effectiveRange, withoutAdditionalLayout: true)
+                
+                if glyphLineCount > 0 {
+                    drawLineNumber(lineNumberString:"-", y:lineRect.minY)
+                } else {
+                    drawLineNumber(lineNumberString:"\(line)", y:lineRect.minY)
+                }
+                
+                // Move to next glyph line
+                glyphLineCount += 1
+                glyphIndexForGlyphLine = NSMaxRange(effectiveRange)
+            }
+            
+            current = NSMaxRange(glyphRangeForStringLine)
+            line += 1
+        }
         /*
         Text.shared.layoutManager?.glyphRange(forBoundingRectWithoutAdditionalLayout: <#T##NSRect#>, in: <#T##NSTextContainer#>)
         
@@ -62,16 +99,16 @@ class Ruler: NSRulerView {
             
             glyphIndexForStringLine = NSMaxRange(glyphRangeForStringLine)
             lineNumber += 1
-        }
+        }*/
         
-        drawLineNumber("\(lineNumber)", Text.shared.layoutManager!.extraLineFragmentRect.minY)*/
+        drawLineNumber(lineNumberString:"\(line)", y:Text.shared.layoutManager!.extraLineFragmentRect.minY)
     }
     
     override func drawHashMarksAndLabels(in: NSRect) { }
     
     private func drawLineNumber(lineNumberString:String, y:CGFloat) {
-        let attString = NSAttributedString(string: lineNumberString, attributes: [:])
+        let attString = NSAttributedString(string: lineNumberString, attributes: [.foregroundColor:NSColor.white])
         let x = 35 - attString.size().width
-        attString.draw(at: NSPoint(x: x, y: y + 50))
+        attString.draw(at: NSPoint(x: x, y: convert(NSZeroPoint, from: Text.shared).y + y + 50))
     }
 }
