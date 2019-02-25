@@ -4,7 +4,7 @@ class Side: NSScrollView {
     static let shared = Side()
     private weak var width: NSLayoutConstraint!
     private weak var top: NSView!
-    private weak var title: Label!
+    private weak var link: Link!
     private let open = CGFloat(240)
     private let closed = CGFloat(70)
     
@@ -16,7 +16,7 @@ class Side: NSScrollView {
         verticalScroller!.controlSize = .mini
         verticalScrollElasticity = .allowed
         horizontalScrollElasticity = .none
-        documentView = NSView()
+        documentView = Flipped()
         documentView!.translatesAutoresizingMaskIntoConstraints = false
         documentView!.topAnchor.constraint(equalTo: topAnchor).isActive = true
         documentView!.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
@@ -45,24 +45,22 @@ class Side: NSScrollView {
         toggle.keyEquivalentModifierMask = .command
         documentView!.addSubview(toggle)
         
-        let button = Link(String(), background: .shade, target: self, action: #selector(select))
-        button.keyEquivalent = "o"
-        button.keyEquivalentModifierMask = .command
-        documentView!.addSubview(button)
-        
-        let title = Label(.local("Side.select"), color: NSColor(white: 1, alpha: 0.7), font: .light(11))
-        button.addSubview(title)
-        self.title = title
+        let link = Link(.local("Side.select"), background: .clear, target: self, action: #selector(select))
+        link.keyEquivalent = "o"
+        link.alignment = .left
+        link.keyEquivalentModifierMask = .command
+        documentView!.addSubview(link)
+        self.link = link
         
         right.topAnchor.constraint(equalTo: topAnchor).isActive = true
         right.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         right.widthAnchor.constraint(equalToConstant: 1).isActive = true
         right.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
-        button.rightAnchor.constraint(equalTo: toggle.leftAnchor).isActive = true
-        button.centerYAnchor.constraint(equalTo: toggle.centerYAnchor).isActive = true
-        button.width.constant = 160
-        button.height.constant = 20
+        link.rightAnchor.constraint(equalTo: toggle.leftAnchor).isActive = true
+        link.centerYAnchor.constraint(equalTo: toggle.centerYAnchor).isActive = true
+        link.width.constant = 160
+        link.height.constant = 20
         
         top.topAnchor.constraint(equalTo: toggle.bottomAnchor, constant: 5).isActive = true
         top.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
@@ -73,9 +71,6 @@ class Side: NSScrollView {
         toggle.rightAnchor.constraint(equalTo: right.leftAnchor).isActive = true
         toggle.widthAnchor.constraint(equalToConstant: closed).isActive = true
         toggle.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        title.centerYAnchor.constraint(equalTo: button.centerYAnchor).isActive = true
-        title.leftAnchor.constraint(equalTo: button.leftAnchor, constant: 10).isActive = true
     }
     
     required init?(coder: NSCoder) { return nil }
@@ -86,18 +81,20 @@ class Side: NSScrollView {
         var stale = false
         _ = (try! URL(resolvingBookmarkData: bookmark.1, options: .withSecurityScope, bookmarkDataIsStale: &stale))
             .startAccessingSecurityScopedResource()
-        title.stringValue = bookmark.0.lastPathComponent
+        link.attributedTitle = NSAttributedString(string: bookmark.0.lastPathComponent, attributes:
+            [.font: NSFont.bold(14), .foregroundColor: NSColor.white])
         var top = self.top.bottomAnchor
         (try! FileManager.default.contentsOfDirectory(at: bookmark.0, includingPropertiesForKeys: [])).forEach {
             let item = SideItem($0)
             documentView!.addSubview(item)
             
-            item.rightAnchor.constraint(equalTo: rightAnchor, constant: -closed).isActive = true
-            item.topAnchor.constraint(equalTo: top, constant: 20).isActive = true
+            item.widthAnchor.constraint(equalToConstant: open).isActive = true
+            item.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+            item.topAnchor.constraint(equalTo: top).isActive = true
             top = item.bottomAnchor
         }
         if self.top.bottomAnchor != top {
-            documentView!.bottomAnchor.constraint(equalTo: top, constant: 500).isActive = true
+            documentView!.bottomAnchor.constraint(equalTo: top, constant: 20).isActive = true
         }
     }
     
@@ -123,3 +120,5 @@ class Side: NSScrollView {
         }
     }
 }
+
+private class Flipped: NSView { override var isFlipped: Bool { return true } }

@@ -10,9 +10,9 @@ class SideItem: NSControl {
         
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         label.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+        label.rightAnchor.constraint(equalTo: rightAnchor, constant: -80).isActive = true
         
-        heightAnchor.constraint(equalToConstant: 26).isActive = true
-        widthAnchor.constraint(equalToConstant: 170).isActive = true
+        heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
     required init?(coder: NSCoder) { return nil }
