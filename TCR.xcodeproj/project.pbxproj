@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		2005542A2222A84E00DCFA33 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200554292222A84E00DCFA33 /* Scroll.swift */; };
 		201E3D272223D342001EE246 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D262223D342001EE246 /* Side.swift */; };
+		201E3D292223E290001EE246 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D282223E290001EE246 /* Label.swift */; };
+		201E3D2C2223E352001EE246 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 201E3D2A2223E352001EE246 /* Localizable.strings */; };
+		201E3D2E2223E37A001EE246 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D2D2223E37A001EE246 /* Shared.swift */; };
+		201E3D302223E5A9001EE246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201E3D2F2223E5A9001EE246 /* Assets.xcassets */; };
+		201E3D322223E5FB001EE246 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D312223E5FB001EE246 /* Button.swift */; };
+		201E3D342223F0AB001EE246 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D332223F0AB001EE246 /* Link.swift */; };
 		20498A272220388800DB4D71 /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20498A242220388800DB4D71 /* Mac.storyboard */; };
 		20498A292220388800DB4D71 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A262220388800DB4D71 /* App.swift */; };
 		20498A2C22203C2500DB4D71 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A2B22203C2500DB4D71 /* Extensions.swift */; };
@@ -23,6 +29,12 @@
 /* Begin PBXFileReference section */
 		200554292222A84E00DCFA33 /* Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
 		201E3D262223D342001EE246 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
+		201E3D282223E290001EE246 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		201E3D2B2223E352001EE246 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		201E3D2D2223E37A001EE246 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		201E3D2F2223E5A9001EE246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		201E3D312223E5FB001EE246 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		201E3D332223F0AB001EE246 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		20498A1F2220387400DB4D71 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		20498A202220387400DB4D71 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		20498A212220387400DB4D71 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -70,11 +82,14 @@
 				20498A252220388800DB4D71 /* Mac.plist */,
 				20498A242220388800DB4D71 /* Mac.storyboard */,
 				20498A262220388800DB4D71 /* App.swift */,
+				201E3D312223E5FB001EE246 /* Button.swift */,
 				20498A2B22203C2500DB4D71 /* Extensions.swift */,
+				201E3D282223E290001EE246 /* Label.swift */,
 				20498A3122203C9F00DB4D71 /* Layout.swift */,
 				2097FCBF222199A500C2FC5E /* Ruler.swift */,
 				200554292222A84E00DCFA33 /* Scroll.swift */,
 				201E3D262223D342001EE246 /* Side.swift */,
+				201E3D332223F0AB001EE246 /* Link.swift */,
 				20498A2F22203C8C00DB4D71 /* Storage.swift */,
 				20498A2D22203C6700DB4D71 /* Text.swift */,
 			);
@@ -86,6 +101,9 @@
 			children = (
 				20498A3522203CCE00DB4D71 /* SFMono-Bold.otf */,
 				20498A3422203CCE00DB4D71 /* SFMono-Light.otf */,
+				201E3D2D2223E37A001EE246 /* Shared.swift */,
+				201E3D2F2223E5A9001EE246 /* Assets.xcassets */,
+				201E3D2A2223E352001EE246 /* Localizable.strings */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -148,8 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				20498A3622203CCE00DB4D71 /* SFMono-Light.otf in Resources */,
+				201E3D2C2223E352001EE246 /* Localizable.strings in Resources */,
 				20498A272220388800DB4D71 /* Mac.storyboard in Resources */,
 				20498A3722203CCE00DB4D71 /* SFMono-Bold.otf in Resources */,
+				201E3D302223E5A9001EE246 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,18 +180,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201E3D2E2223E37A001EE246 /* Shared.swift in Sources */,
 				20498A292220388800DB4D71 /* App.swift in Sources */,
 				20498A3022203C8C00DB4D71 /* Storage.swift in Sources */,
+				201E3D342223F0AB001EE246 /* Link.swift in Sources */,
 				201E3D272223D342001EE246 /* Side.swift in Sources */,
 				2097FCC0222199A500C2FC5E /* Ruler.swift in Sources */,
 				20498A3222203C9F00DB4D71 /* Layout.swift in Sources */,
+				201E3D292223E290001EE246 /* Label.swift in Sources */,
 				2005542A2222A84E00DCFA33 /* Scroll.swift in Sources */,
 				20498A2E22203C6700DB4D71 /* Text.swift in Sources */,
 				20498A2C22203C2500DB4D71 /* Extensions.swift in Sources */,
+				201E3D322223E5FB001EE246 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		201E3D2A2223E352001EE246 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				201E3D2B2223E352001EE246 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		20498A1A2220378A00DB4D71 /* Debug */ = {

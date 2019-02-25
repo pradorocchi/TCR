@@ -11,6 +11,7 @@ class Scroll: NSScrollView {
         verticalScroller!.controlSize = .mini
         verticalScrollElasticity = .allowed
         horizontalScrollElasticity = .none
+        isHidden = true
         documentView = Text.shared
         verticalRulerView = Ruler.shared
         rulersVisible = true
