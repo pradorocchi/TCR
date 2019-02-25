@@ -40,9 +40,13 @@ class Side: NSScrollView {
         let toggle = Button("listOff", type: .toggle, target: self, action: #selector(self.toggle(_:)))
         toggle.state = .on
         toggle.alternateImage = NSImage(named: "listOn")
+        toggle.keyEquivalent = "l"
+        toggle.keyEquivalentModifierMask = .command
         documentView!.addSubview(toggle)
         
         let button = Link(String(), background: .shade, target: self, action: #selector(select))
+        button.keyEquivalent = "o"
+        button.keyEquivalentModifierMask = .command
         documentView!.addSubview(button)
         
         let title = Label(.local("Side.select"), color: NSColor(white: 1, alpha: 0.7), font: .light(11))
@@ -85,7 +89,19 @@ class Side: NSScrollView {
     }
     
     @objc private func select() {
-        print("select")
+        let open = NSOpenPanel()
+        open.canChooseFiles = false
+        open.canChooseDirectories = true
+        open.message = .local("Side.open")
+        open.begin {
+            if $0 == .OK {
+                print(open.url!)
+                (try! FileManager.default.contentsOfDirectory(at: open.url!, includingPropertiesForKeys: [])).forEach {
+                    print($0)
+                }
+            }
+        }
+        
         
         /*
          NSURL *url = <#A URL for a directory#>;

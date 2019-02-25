@@ -86,10 +86,10 @@
 				20498A2B22203C2500DB4D71 /* Extensions.swift */,
 				201E3D282223E290001EE246 /* Label.swift */,
 				20498A3122203C9F00DB4D71 /* Layout.swift */,
+				201E3D332223F0AB001EE246 /* Link.swift */,
 				2097FCBF222199A500C2FC5E /* Ruler.swift */,
 				200554292222A84E00DCFA33 /* Scroll.swift */,
 				201E3D262223D342001EE246 /* Side.swift */,
-				201E3D332223F0AB001EE246 /* Link.swift */,
 				20498A2F22203C8C00DB4D71 /* Storage.swift */,
 				20498A2D22203C6700DB4D71 /* Text.swift */,
 			);
@@ -140,6 +140,11 @@
 				TargetAttributes = {
 					20498A0B2220378800DB4D71 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -241,6 +246,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Mac/Mac.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -304,6 +310,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Mac/Mac.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -331,8 +338,6 @@
 		20498A1D2220378A00DB4D71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Mac/Mac.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
@@ -350,8 +355,6 @@
 		20498A1E2220378A00DB4D71 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Mac/Mac.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
