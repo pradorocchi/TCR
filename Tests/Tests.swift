@@ -16,6 +16,24 @@ class Tests: XCTestCase {
     }
     
     func testLoad() {
-        
+        let user = User()
+        storage._user = user
+        XCTAssertTrue(user === User.load())
+    }
+    
+    func testFirstTimeSaves() {
+        let expect = expectation(description: String())
+        storage.error = NSError()
+        storage.saved = { expect.fulfill() }
+        _ = User.load()
+        waitForExpectations(timeout: 1)
+    }
+    
+    func testUpdateBookmarkSaves() {
+        let expect = expectation(description: String())
+        storage.error = NSError()
+        storage.saved = { expect.fulfill() }
+        User().bookmark = [:]
+        waitForExpectations(timeout: 1)
     }
 }

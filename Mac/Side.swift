@@ -3,6 +3,7 @@ import AppKit
 class Side: NSScrollView {
     static let shared = Side()
     private weak var width: NSLayoutConstraint!
+    private weak var top: NSView!
     private weak var title: Label!
     private let open = CGFloat(240)
     private let closed = CGFloat(70)
@@ -18,7 +19,6 @@ class Side: NSScrollView {
         documentView = NSView()
         documentView!.translatesAutoresizingMaskIntoConstraints = false
         documentView!.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        documentView!.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         documentView!.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         documentView!.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
@@ -36,6 +36,7 @@ class Side: NSScrollView {
         top.wantsLayer = true
         top.layer!.backgroundColor = right.layer!.backgroundColor
         documentView!.addSubview(top)
+        self.top = top
         
         let toggle = Button("listOff", type: .toggle, target: self, action: #selector(self.toggle(_:)))
         toggle.state = .on
@@ -79,6 +80,27 @@ class Side: NSScrollView {
     
     required init?(coder: NSCoder) { return nil }
     
+    func update() {
+        guard let bookmark = App.shared.user.bookmark.first else { return }
+        documentView!.subviews.filter({ $0 is SideItem }).forEach({ $0.removeFromSuperview() })
+        var stale = false
+        _ = (try! URL(resolvingBookmarkData: bookmark.1, options: .withSecurityScope, bookmarkDataIsStale: &stale))
+            .startAccessingSecurityScopedResource()
+        title.stringValue = bookmark.0.lastPathComponent
+        var top = self.top.bottomAnchor
+        (try! FileManager.default.contentsOfDirectory(at: bookmark.0, includingPropertiesForKeys: [])).forEach {
+            let item = SideItem($0)
+            documentView!.addSubview(item)
+            
+            item.rightAnchor.constraint(equalTo: rightAnchor, constant: -closed).isActive = true
+            item.topAnchor.constraint(equalTo: top, constant: 20).isActive = true
+            top = item.bottomAnchor
+        }
+        if self.top.bottomAnchor != top {
+            documentView!.bottomAnchor.constraint(equalTo: top, constant: 500).isActive = true
+        }
+    }
+    
     @objc private func toggle(_ button: Button) {
         width.constant = button.state == .on ? open : closed
         NSAnimationContext.runAnimationGroup({ context in
@@ -95,29 +117,9 @@ class Side: NSScrollView {
         open.message = .local("Side.open")
         open.begin {
             if $0 == .OK {
-                print(open.url!)
-                (try! FileManager.default.contentsOfDirectory(at: open.url!, includingPropertiesForKeys: [])).forEach {
-                    print($0)
-                }
+                App.shared.user.bookmark = [open.url!: try! open.url!.bookmarkData(options: .withSecurityScope)]
+                self.update()
             }
         }
-        
-        
-        /*
-         NSURL *url = <#A URL for a directory#>;
-         NSError *error = nil;
-         NSArray *properties = [NSArray arrayWithObjects: NSURLLocalizedNameKey,
-         NSURLCreationDateKey, NSURLLocalizedTypeDescriptionKey, nil];
-         
-         NSArray *array = [[NSFileManager defaultManager]
-         contentsOfDirectoryAtURL:url
-         includingPropertiesForKeys:properties
-         options:(NSDirectoryEnumerationSkipsHiddenFiles)
-         error:&error];
-         if (array == nil) {
-         // Handle the error
-         }
-
- */
     }
 }

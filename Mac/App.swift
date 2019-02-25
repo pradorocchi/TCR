@@ -1,7 +1,9 @@
 import AppKit
+import TCR
 
 @NSApplicationMain class App: NSWindow, NSApplicationDelegate {
     static private(set) weak var shared: App!
+    private(set) var user: User!
     
     func applicationShouldTerminateAfterLastWindowClosed(_: NSApplication) -> Bool { return true }
     override func cancelOperation(_: Any?) { makeFirstResponder(nil) }
@@ -25,5 +27,10 @@ import AppKit
         Scroll.shared.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor).isActive = true
         Scroll.shared.leftAnchor.constraint(equalTo: Side.shared.rightAnchor).isActive = true
         Scroll.shared.rightAnchor.constraint(equalTo: contentView!.rightAnchor).isActive = true
+        
+        DispatchQueue.global(qos: .background).async {
+            self.user = User.load()
+            DispatchQueue.main.async { Side.shared.update() }
+        }
     }
 }
