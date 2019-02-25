@@ -2,6 +2,7 @@ import AppKit
 
 class Side: NSScrollView {
     static let shared = Side()
+    weak var selected: SideItem? { didSet { oldValue?.update(); selected?.update() } }
     private weak var width: NSLayoutConstraint!
     private weak var top: NSView!
     private weak var link: Link!
@@ -53,14 +54,14 @@ class Side: NSScrollView {
         self.link = link
         
         right.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        right.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        right.bottomAnchor.constraint(equalTo: documentView!.bottomAnchor).isActive = true
         right.widthAnchor.constraint(equalToConstant: 1).isActive = true
         right.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
         link.rightAnchor.constraint(equalTo: toggle.leftAnchor).isActive = true
         link.centerYAnchor.constraint(equalTo: toggle.centerYAnchor).isActive = true
-        link.width.constant = 160
-        link.height.constant = 20
+        link.width.constant = 154
+        link.height.constant = 30
         
         top.topAnchor.constraint(equalTo: toggle.bottomAnchor, constant: 5).isActive = true
         top.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
@@ -82,10 +83,10 @@ class Side: NSScrollView {
         _ = (try! URL(resolvingBookmarkData: bookmark.1, options: .withSecurityScope, bookmarkDataIsStale: &stale))
             .startAccessingSecurityScopedResource()
         link.attributedTitle = NSAttributedString(string: bookmark.0.lastPathComponent, attributes:
-            [.font: NSFont.bold(14), .foregroundColor: NSColor.white])
+            [.font: NSFont.bold(14), .foregroundColor: NSColor(white: 1, alpha: 0.6)])
         var top = self.top.bottomAnchor
         (try! FileManager.default.contentsOfDirectory(at: bookmark.0, includingPropertiesForKeys: [])).forEach {
-            let item = SideItem($0)
+            let item = SideItem($0, target: self, action: #selector(open(_:)))
             documentView!.addSubview(item)
             
             item.widthAnchor.constraint(equalToConstant: open).isActive = true
@@ -98,6 +99,10 @@ class Side: NSScrollView {
         }
     }
     
+    @objc func open(_ item: SideItem) {
+        selected = item
+    }
+    
     @objc private func toggle(_ button: Button) {
         width.constant = button.state == .on ? open : closed
         NSAnimationContext.runAnimationGroup({ context in
@@ -108,13 +113,13 @@ class Side: NSScrollView {
     }
     
     @objc private func select() {
-        let open = NSOpenPanel()
-        open.canChooseFiles = false
-        open.canChooseDirectories = true
-        open.message = .local("Side.open")
-        open.begin {
+        let panel = NSOpenPanel()
+        panel.canChooseFiles = false
+        panel.canChooseDirectories = true
+        panel.message = .local("Side.open")
+        panel.begin {
             if $0 == .OK {
-                App.shared.user.bookmark = [open.url!: try! open.url!.bookmarkData(options: .withSecurityScope)]
+                App.shared.user.bookmark = [panel.url!: try! panel.url!.bookmarkData(options: .withSecurityScope)]
                 self.update()
             }
         }
