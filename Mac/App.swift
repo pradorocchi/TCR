@@ -9,15 +9,21 @@ import AppKit
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        UserDefaults.standard.set(false, forKey:"NSFullScreenMenuItemEverywhere")
+        UserDefaults.standard.set(false, forKey: "NSFullScreenMenuItemEverywhere")
         backgroundColor = .black
         NSApp.delegate = self
         App.shared = self
+        
         contentView!.addSubview(Scroll.shared)
+        contentView!.addSubview(Side.shared)
+        
+        Side.shared.topAnchor.constraint(equalTo: contentView!.topAnchor).isActive = true
+        Side.shared.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor).isActive = true
+        Side.shared.leftAnchor.constraint(equalTo: contentView!.leftAnchor).isActive = true
         
         Scroll.shared.topAnchor.constraint(equalTo: contentView!.topAnchor).isActive = true
         Scroll.shared.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor).isActive = true
-        Scroll.shared.leftAnchor.constraint(equalTo: contentView!.leftAnchor).isActive = true
+        Scroll.shared.leftAnchor.constraint(equalTo: Side.shared.rightAnchor).isActive = true
         Scroll.shared.rightAnchor.constraint(equalTo: contentView!.rightAnchor).isActive = true
     }
 }
