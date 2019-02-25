@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2005542A2222A84E00DCFA33 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200554292222A84E00DCFA33 /* Scroll.swift */; };
+		201B44DC2224092400BAB6E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201B44DB2224092400BAB6E4 /* User.swift */; };
 		201E3D272223D342001EE246 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D262223D342001EE246 /* Side.swift */; };
 		201E3D292223E290001EE246 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D282223E290001EE246 /* Label.swift */; };
 		201E3D2C2223E352001EE246 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 201E3D2A2223E352001EE246 /* Localizable.strings */; };
@@ -23,11 +24,25 @@
 		20498A3222203C9F00DB4D71 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A3122203C9F00DB4D71 /* Layout.swift */; };
 		20498A3622203CCE00DB4D71 /* SFMono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20498A3422203CCE00DB4D71 /* SFMono-Light.otf */; };
 		20498A3722203CCE00DB4D71 /* SFMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20498A3522203CCE00DB4D71 /* SFMono-Bold.otf */; };
+		208CB035222404A700787DAA /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208CB034222404A700787DAA /* Tests.swift */; };
+		208CB037222404A700787DAA /* libLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 208CB0232224047300787DAA /* libLibrary.a */; };
+		208CB03F2224081800787DAA /* libLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 208CB0232224047300787DAA /* libLibrary.a */; };
 		2097FCC0222199A500C2FC5E /* Ruler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097FCBF222199A500C2FC5E /* Ruler.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		208CB038222404A700787DAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20498A042220378800DB4D71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 208CB0222224047300787DAA;
+			remoteInfo = Library;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		200554292222A84E00DCFA33 /* Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
+		201B44DB2224092400BAB6E4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		201E3D262223D342001EE246 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 		201E3D282223E290001EE246 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		201E3D2B2223E352001EE246 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -49,6 +64,10 @@
 		20498A3122203C9F00DB4D71 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		20498A3422203CCE00DB4D71 /* SFMono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Light.otf"; sourceTree = "<group>"; };
 		20498A3522203CCE00DB4D71 /* SFMono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Bold.otf"; sourceTree = "<group>"; };
+		208CB0232224047300787DAA /* libLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		208CB032222404A700787DAA /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		208CB034222404A700787DAA /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		208CB036222404A700787DAA /* Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
 		2097FCBF222199A500C2FC5E /* Ruler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,21 +76,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208CB03F2224081800787DAA /* libLibrary.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		208CB0212224047300787DAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		208CB02F222404A700787DAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				208CB037222404A700787DAA /* libLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		201B44DA2224092400BAB6E4 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				201B44DB2224092400BAB6E4 /* User.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		20498A032220378800DB4D71 = {
 			isa = PBXGroup;
 			children = (
 				20498A212220387400DB4D71 /* .gitignore */,
 				20498A202220387400DB4D71 /* LICENSE */,
+				208CB0232224047300787DAA /* libLibrary.a */,
 				20498A2A2220389500DB4D71 /* TCR.app */,
 				20498A1F2220387400DB4D71 /* README.md */,
+				208CB032222404A700787DAA /* Tests.xctest */,
+				208CB03E2224081800787DAA /* Frameworks */,
+				201B44DA2224092400BAB6E4 /* Library */,
 				20498A222220388800DB4D71 /* Mac */,
 				20498A3322203CCE00DB4D71 /* Shared */,
+				208CB033222404A700787DAA /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,7 +156,33 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		208CB033222404A700787DAA /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				208CB036222404A700787DAA /* Tests.plist */,
+				208CB034222404A700787DAA /* Tests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		208CB03E2224081800787DAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		208CB01F2224047300787DAA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		20498A0B2220378800DB4D71 /* TCR */ = {
@@ -128,6 +202,41 @@
 			productReference = 20498A2A2220389500DB4D71 /* TCR.app */;
 			productType = "com.apple.product-type.application";
 		};
+		208CB0222224047300787DAA /* Library */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 208CB0292224047300787DAA /* Build configuration list for PBXNativeTarget "Library" */;
+			buildPhases = (
+				208CB01F2224047300787DAA /* Headers */,
+				208CB0202224047300787DAA /* Sources */,
+				208CB0212224047300787DAA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Library;
+			productName = Library;
+			productReference = 208CB0232224047300787DAA /* libLibrary.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		208CB031222404A700787DAA /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 208CB03A222404A700787DAA /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				208CB02E222404A700787DAA /* Sources */,
+				208CB02F222404A700787DAA /* Frameworks */,
+				208CB030222404A700787DAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				208CB039222404A700787DAA /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 208CB032222404A700787DAA /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -146,6 +255,13 @@
 							};
 						};
 					};
+					208CB0222224047300787DAA = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+					208CB031222404A700787DAA = {
+						CreatedOnToolsVersion = 10.1;
+					};
 				};
 			};
 			buildConfigurationList = 20498A072220378800DB4D71 /* Build configuration list for PBXProject "TCR" */;
@@ -160,6 +276,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				208CB0222224047300787DAA /* Library */,
+				208CB031222404A700787DAA /* Tests */,
 				20498A0B2220378800DB4D71 /* TCR */,
 			);
 		};
@@ -175,6 +293,13 @@
 				20498A272220388800DB4D71 /* Mac.storyboard in Resources */,
 				20498A3722203CCE00DB4D71 /* SFMono-Bold.otf in Resources */,
 				201E3D302223E5A9001EE246 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		208CB030222404A700787DAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +325,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		208CB0202224047300787DAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201B44DC2224092400BAB6E4 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		208CB02E222404A700787DAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				208CB035222404A700787DAA /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		208CB039222404A700787DAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 208CB0222224047300787DAA /* Library */;
+			targetProxy = 208CB038222404A700787DAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		201E3D2A2223E352001EE246 /* Localizable.strings */ = {
@@ -246,8 +395,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = Mac/Mac.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -310,8 +457,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = Mac/Mac.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -338,6 +483,8 @@
 		20498A1D2220378A00DB4D71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Mac/Mac.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
@@ -347,7 +494,8 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TCR.Mac;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)App";
+				PRODUCT_NAME = TCR;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
@@ -355,6 +503,8 @@
 		20498A1E2220378A00DB4D71 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Mac/Mac.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
@@ -364,8 +514,85 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TCR.Mac;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)App";
+				PRODUCT_NAME = TCR;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		208CB02A2224047300787DAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_MODULE_NAME = TCR;
+				PRODUCT_NAME = Library;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		208CB02B2224047300787DAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_MODULE_NAME = TCR;
+				PRODUCT_NAME = Library;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		208CB03B222404A700787DAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				INFOPLIST_FILE = Tests/Tests.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = TCR.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		208CB03C222404A700787DAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				INFOPLIST_FILE = Tests/Tests.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = TCR.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -386,6 +613,24 @@
 			buildConfigurations = (
 				20498A1D2220378A00DB4D71 /* Debug */,
 				20498A1E2220378A00DB4D71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		208CB0292224047300787DAA /* Build configuration list for PBXNativeTarget "Library" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				208CB02A2224047300787DAA /* Debug */,
+				208CB02B2224047300787DAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		208CB03A222404A700787DAA /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				208CB03B222404A700787DAA /* Debug */,
+				208CB03C222404A700787DAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
