@@ -42,17 +42,11 @@ class Side: NSScrollView {
         toggle.alternateImage = NSImage(named: "listOn")
         documentView!.addSubview(toggle)
         
-        let button = NSControl()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.wantsLayer = true
-        button.layer!.backgroundColor = NSColor.shade.cgColor
-        button.layer!.cornerRadius = 4
-        button.target = self
-        button.action = #selector(select)
+        let button = Link(String(), background: .shade, target: self, action: #selector(select))
         documentView!.addSubview(button)
         
         let title = Label(.local("Side.select"), color: NSColor(white: 1, alpha: 0.7), font: .light(11))
-        documentView!.addSubview(title)
+        button.addSubview(title)
         self.title = title
         
         right.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -60,10 +54,10 @@ class Side: NSScrollView {
         right.widthAnchor.constraint(equalToConstant: 1).isActive = true
         right.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
-        button.topAnchor.constraint(equalTo: toggle.topAnchor, constant: 5).isActive = true
         button.rightAnchor.constraint(equalTo: toggle.leftAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: toggle.bottomAnchor, constant: -5).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 160).isActive = true
+        button.centerYAnchor.constraint(equalTo: toggle.centerYAnchor).isActive = true
+        button.width.constant = 160
+        button.height.constant = 20
         
         top.topAnchor.constraint(equalTo: toggle.bottomAnchor, constant: 5).isActive = true
         top.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
@@ -91,6 +85,23 @@ class Side: NSScrollView {
     }
     
     @objc private func select() {
+        print("select")
         
+        /*
+         NSURL *url = <#A URL for a directory#>;
+         NSError *error = nil;
+         NSArray *properties = [NSArray arrayWithObjects: NSURLLocalizedNameKey,
+         NSURLCreationDateKey, NSURLLocalizedTypeDescriptionKey, nil];
+         
+         NSArray *array = [[NSFileManager defaultManager]
+         contentsOfDirectoryAtURL:url
+         includingPropertiesForKeys:properties
+         options:(NSDirectoryEnumerationSkipsHiddenFiles)
+         error:&error];
+         if (array == nil) {
+         // Handle the error
+         }
+
+ */
     }
 }
