@@ -83,9 +83,11 @@ class Side: NSScrollView {
         _ = (try! URL(resolvingBookmarkData: bookmark.1, options: .withSecurityScope, bookmarkDataIsStale: &stale))
             .startAccessingSecurityScopedResource()
         link.attributedTitle = NSAttributedString(string: bookmark.0.lastPathComponent, attributes:
-            [.font: NSFont.bold(14), .foregroundColor: NSColor(white: 1, alpha: 0.6)])
+            [.font: NSFont.bold(14), .foregroundColor: NSColor(white: 1, alpha: 0.7)])
         var top = self.top.bottomAnchor
-        (try! FileManager.default.contentsOfDirectory(at: bookmark.0, includingPropertiesForKeys: [])).forEach {
+        (try! FileManager.default.contentsOfDirectory(at: bookmark.0, includingPropertiesForKeys: []))
+            .sorted(by: { $0.lastPathComponent.compare($1.lastPathComponent,
+                                                       options: .caseInsensitive) == .orderedAscending }).forEach {
             let item = SideItem($0, target: self, action: #selector(open(_:)))
             documentView!.addSubview(item)
             

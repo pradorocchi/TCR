@@ -8,7 +8,7 @@ class SideItem: NSControl {
         self.target = target
         self.action = action
         
-        let label = Label(url.lastPathComponent, color: NSColor(white: 1, alpha: 0.5), font: .light(12))
+        let label = Label(url.lastPathComponent, color: NSColor(white: 1, alpha: 0.7), font: .light(12))
         label.lineBreakMode = .byCharWrapping
         label.maximumNumberOfLines = 2
         addSubview(label)
