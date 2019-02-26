@@ -1,7 +1,10 @@
 import AppKit
 
 class SideItem: NSControl {
+    let url: URL
+    
     init(_ url: URL, target: AnyObject, action: Selector) {
+        self.url = url
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         wantsLayer = true

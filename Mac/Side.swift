@@ -103,6 +103,7 @@ class Side: NSScrollView {
     
     @objc func open(_ item: SideItem) {
         selected = item
+        Scroll.shared.open(item.url)
     }
     
     @objc private func toggle(_ button: Button) {

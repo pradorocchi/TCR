@@ -30,7 +30,10 @@ import TCR
         
         DispatchQueue.global(qos: .background).async {
             self.user = User.load()
-            DispatchQueue.main.async { Side.shared.update() }
+            DispatchQueue.main.async {
+                Side.shared.update()
+                Text.shared.font = .light(16)
+            }
         }
     }
 }

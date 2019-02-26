@@ -3,9 +3,6 @@ import AppKit
 class Text: NSTextView {
     static let shared = Text()
     override var string: String { didSet { adjust() } }
-    var size = CGFloat(20) { didSet { resize() } }
-    private(set) var bold: NSFont!
-    private(set) var light: NSFont!
     private weak var height: NSLayoutConstraint!
     
     private init() {
@@ -24,11 +21,14 @@ class Text: NSTextView {
         textContainerInset = NSSize(width: 20, height: 30)
         height = heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
         height.isActive = true
-        resize()
-        adjust()
     }
     
     required init?(coder: NSCoder) { return nil }
+    
+    override var font: NSFont? { didSet {
+        Storage.shared.light = .light(font!.pointSize)
+        Storage.shared.bold = .bold(font!.pointSize)
+    } }
     
     override func drawInsertionPoint(in rect: NSRect, color: NSColor, turnedOn: Bool) {
         var rect = rect
@@ -44,12 +44,6 @@ class Text: NSTextView {
     private func adjust() {
         layoutManager!.ensureLayout(for: textContainer!)
         height.constant = layoutManager!.usedRect(for: textContainer!).size.height + (textContainerInset.height * 2)
-        Ruler.shared.setNeedsDisplay(visibleRect)
-    }
-    
-    private func resize() {
-        light = .light(size)
-        bold = .bold(size)
-        font = light
+        DispatchQueue.main.async { Ruler.shared.setNeedsDisplay(self.visibleRect) }
     }
 }
