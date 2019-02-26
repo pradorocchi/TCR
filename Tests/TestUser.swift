@@ -1,7 +1,7 @@
 import XCTest
 @testable import TCR
 
-class Tests: XCTestCase {
+class TestUser: XCTestCase {
     private var storage: TestStorage!
     
     override func setUp() {

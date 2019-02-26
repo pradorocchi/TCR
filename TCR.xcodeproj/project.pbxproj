@@ -24,13 +24,17 @@
 		20498A3222203C9F00DB4D71 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A3122203C9F00DB4D71 /* Layout.swift */; };
 		20498A3622203CCE00DB4D71 /* SFMono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20498A3422203CCE00DB4D71 /* SFMono-Light.otf */; };
 		20498A3722203CCE00DB4D71 /* SFMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20498A3522203CCE00DB4D71 /* SFMono-Bold.otf */; };
-		208CB035222404A700787DAA /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208CB034222404A700787DAA /* Tests.swift */; };
+		2078E78522252FDA0056C8D1 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078E78422252FDA0056C8D1 /* Document.swift */; };
+		2078E787222530CE0056C8D1 /* TestDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078E786222530CE0056C8D1 /* TestDocument.swift */; };
+		2078E789222531910056C8D1 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078E788222531910056C8D1 /* Directory.swift */; };
+		2078E78B222539D20056C8D1 /* Md.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078E78A222539D20056C8D1 /* Md.swift */; };
+		208CB035222404A700787DAA /* TestUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208CB034222404A700787DAA /* TestUser.swift */; };
 		208CB037222404A700787DAA /* libLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 208CB0232224047300787DAA /* libLibrary.a */; };
 		208CB03F2224081800787DAA /* libLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 208CB0232224047300787DAA /* libLibrary.a */; };
 		2097FCC0222199A500C2FC5E /* Ruler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097FCBF222199A500C2FC5E /* Ruler.swift */; };
 		20B2F4F222240C110043D283 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F122240C110043D283 /* Storage.swift */; };
 		20B2F4F422240E1E0043D283 /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F322240E1E0043D283 /* TestStorage.swift */; };
-		20B2F4F6222420840043D283 /* SideItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F5222420840043D283 /* SideItem.swift */; };
+		20B2F4F6222420840043D283 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F5222420840043D283 /* Document.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,14 +71,18 @@
 		20498A3122203C9F00DB4D71 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		20498A3422203CCE00DB4D71 /* SFMono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Light.otf"; sourceTree = "<group>"; };
 		20498A3522203CCE00DB4D71 /* SFMono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Bold.otf"; sourceTree = "<group>"; };
+		2078E78422252FDA0056C8D1 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		2078E786222530CE0056C8D1 /* TestDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDocument.swift; sourceTree = "<group>"; };
+		2078E788222531910056C8D1 /* Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
+		2078E78A222539D20056C8D1 /* Md.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Md.swift; sourceTree = "<group>"; };
 		208CB0232224047300787DAA /* libLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		208CB032222404A700787DAA /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		208CB034222404A700787DAA /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		208CB034222404A700787DAA /* TestUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUser.swift; sourceTree = "<group>"; };
 		208CB036222404A700787DAA /* Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
 		2097FCBF222199A500C2FC5E /* Ruler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruler.swift; sourceTree = "<group>"; };
 		20B2F4F122240C110043D283 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		20B2F4F322240E1E0043D283 /* TestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
-		20B2F4F5222420840043D283 /* SideItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideItem.swift; sourceTree = "<group>"; };
+		20B2F4F5222420840043D283 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +115,11 @@
 		201B44DA2224092400BAB6E4 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				201B44DB2224092400BAB6E4 /* User.swift */,
+				2078E788222531910056C8D1 /* Directory.swift */,
+				2078E78422252FDA0056C8D1 /* Document.swift */,
+				2078E78A222539D20056C8D1 /* Md.swift */,
 				20B2F4F122240C110043D283 /* Storage.swift */,
+				201B44DB2224092400BAB6E4 /* User.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -138,6 +149,7 @@
 				20498A242220388800DB4D71 /* Mac.storyboard */,
 				20498A262220388800DB4D71 /* App.swift */,
 				201E3D312223E5FB001EE246 /* Button.swift */,
+				20B2F4F5222420840043D283 /* Document.swift */,
 				20498A2B22203C2500DB4D71 /* Extensions.swift */,
 				201E3D282223E290001EE246 /* Label.swift */,
 				20498A3122203C9F00DB4D71 /* Layout.swift */,
@@ -145,7 +157,6 @@
 				2097FCBF222199A500C2FC5E /* Ruler.swift */,
 				200554292222A84E00DCFA33 /* Scroll.swift */,
 				201E3D262223D342001EE246 /* Side.swift */,
-				20B2F4F5222420840043D283 /* SideItem.swift */,
 				20498A2F22203C8C00DB4D71 /* Storage.swift */,
 				20498A2D22203C6700DB4D71 /* Text.swift */,
 			);
@@ -168,8 +179,9 @@
 			isa = PBXGroup;
 			children = (
 				208CB036222404A700787DAA /* Tests.plist */,
-				208CB034222404A700787DAA /* Tests.swift */,
+				2078E786222530CE0056C8D1 /* TestDocument.swift */,
 				20B2F4F322240E1E0043D283 /* TestStorage.swift */,
+				208CB034222404A700787DAA /* TestUser.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -324,7 +336,7 @@
 				20498A3022203C8C00DB4D71 /* Storage.swift in Sources */,
 				201E3D342223F0AB001EE246 /* Link.swift in Sources */,
 				201E3D272223D342001EE246 /* Side.swift in Sources */,
-				20B2F4F6222420840043D283 /* SideItem.swift in Sources */,
+				20B2F4F6222420840043D283 /* Document.swift in Sources */,
 				2097FCC0222199A500C2FC5E /* Ruler.swift in Sources */,
 				20498A3222203C9F00DB4D71 /* Layout.swift in Sources */,
 				201E3D292223E290001EE246 /* Label.swift in Sources */,
@@ -341,6 +353,9 @@
 			files = (
 				201B44DC2224092400BAB6E4 /* User.swift in Sources */,
 				20B2F4F222240C110043D283 /* Storage.swift in Sources */,
+				2078E78522252FDA0056C8D1 /* Document.swift in Sources */,
+				2078E78B222539D20056C8D1 /* Md.swift in Sources */,
+				2078E789222531910056C8D1 /* Directory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +363,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				208CB035222404A700787DAA /* Tests.swift in Sources */,
+				2078E787222530CE0056C8D1 /* TestDocument.swift in Sources */,
+				208CB035222404A700787DAA /* TestUser.swift in Sources */,
 				20B2F4F422240E1E0043D283 /* TestStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

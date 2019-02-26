@@ -1,17 +1,18 @@
 import AppKit
+import TCR
 
-class SideItem: NSControl {
-    let url: URL
+class Document: NSControl {
+    let document: TCR.Document
     
-    init(_ url: URL, target: AnyObject, action: Selector) {
-        self.url = url
+    init(_ document: TCR.Document, target: AnyObject, action: Selector) {
+        self.document = document
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         wantsLayer = true
         self.target = target
         self.action = action
         
-        let label = Label(url.lastPathComponent, color: NSColor(white: 1, alpha: 0.7), font: .light(12))
+        let label = Label(document.name, color: NSColor(white: 1, alpha: 0.7), font: .light(12))
         label.lineBreakMode = .byCharWrapping
         label.maximumNumberOfLines = 2
         addSubview(label)

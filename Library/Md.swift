@@ -1,0 +1,3 @@
+class Md: Document {
+    
+}

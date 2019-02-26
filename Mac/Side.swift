@@ -2,7 +2,7 @@ import AppKit
 
 class Side: NSScrollView {
     static let shared = Side()
-    weak var selected: SideItem? { didSet { oldValue?.update(); selected?.update() } }
+    weak var selected: Document? { didSet { oldValue?.update(); selected?.update() } }
     private weak var width: NSLayoutConstraint!
     private weak var top: NSView!
     private weak var link: Link!
@@ -46,7 +46,7 @@ class Side: NSScrollView {
         toggle.keyEquivalentModifierMask = .command
         documentView!.addSubview(toggle)
         
-        let link = Link(.local("Side.select"), background: .clear, target: self, action: #selector(select))
+        let link = Link(String(), background: .clear, target: self, action: #selector(select))
         link.keyEquivalent = "o"
         link.alignment = .left
         link.keyEquivalentModifierMask = .command
@@ -77,33 +77,27 @@ class Side: NSScrollView {
     required init?(coder: NSCoder) { return nil }
     
     func update() {
-        guard let bookmark = App.shared.user.bookmark.first else { return }
-        documentView!.subviews.filter({ $0 is SideItem }).forEach({ $0.removeFromSuperview() })
-        var stale = false
-        _ = (try! URL(resolvingBookmarkData: bookmark.1, options: .withSecurityScope, bookmarkDataIsStale: &stale))
-            .startAccessingSecurityScopedResource()
-        link.attributedTitle = NSAttributedString(string: bookmark.0.lastPathComponent, attributes:
+        documentView!.subviews.filter({ $0 is Document }).forEach({ $0.removeFromSuperview() })
+        link.attributedTitle = NSAttributedString(string: App.shared.user.folder ?? .local("Side.select"), attributes:
             [.font: NSFont.bold(14), .foregroundColor: NSColor(white: 1, alpha: 0.7)])
         var top = self.top.bottomAnchor
-        (try! FileManager.default.contentsOfDirectory(at: bookmark.0, includingPropertiesForKeys: []))
-            .sorted(by: { $0.lastPathComponent.compare($1.lastPathComponent,
-                                                       options: .caseInsensitive) == .orderedAscending }).forEach {
-            let item = SideItem($0, target: self, action: #selector(open(_:)))
-            documentView!.addSubview(item)
+        App.shared.user.documents.forEach {
+            let document = Document($0, target: self, action: #selector(open(_:)))
+            documentView!.addSubview(document)
             
-            item.widthAnchor.constraint(equalToConstant: open).isActive = true
-            item.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-            item.topAnchor.constraint(equalTo: top).isActive = true
-            top = item.bottomAnchor
+            document.widthAnchor.constraint(equalToConstant: open).isActive = true
+            document.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+            document.topAnchor.constraint(equalTo: top).isActive = true
+            top = document.bottomAnchor
         }
         if self.top.bottomAnchor != top {
             documentView!.bottomAnchor.constraint(equalTo: top, constant: 20).isActive = true
         }
     }
     
-    @objc func open(_ item: SideItem) {
+    @objc func open(_ item: Document) {
         selected = item
-        Scroll.shared.open(item.url)
+//        Scroll.shared.open(item.url)
     }
     
     @objc private func toggle(_ button: Button) {
