@@ -23,7 +23,6 @@ public class User: Codable {
     public var documents: [Document] {
         return bookmark.isEmpty ? [] : Document.make(
             (try! FileManager.default.contentsOfDirectory(at: bookmark.first!.0, includingPropertiesForKeys: [])))
-            .sorted(by: { $0.name.compare($1.name, options: .caseInsensitive) == .orderedAscending })
     }
     
     private func save() { Storage.shared.save(self) }

@@ -14,4 +14,10 @@ class TestDocument: XCTestCase {
     func testName() {
         XCTAssertEqual("hello.md", Document.make([URL(fileURLWithPath: "is/fake/hello.md")]).first?.name)
     }
+    
+    func testSort() {
+        let documents = Document.make([URL(fileURLWithPath: "b"), URL(fileURLWithPath: "a")])
+        XCTAssertEqual("a", documents.first?.name)
+        XCTAssertEqual("b", documents.last?.name)
+    }
 }
