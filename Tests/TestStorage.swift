@@ -4,6 +4,7 @@ import Foundation
 class TestStorage: Storage {
     var error: Error?
     var _user = User()
+    var _document = String()
     var saved: (() -> Void)?
     
     override func user() throws -> User {
@@ -16,4 +17,6 @@ class TestStorage: Storage {
     override func save(_ user: User) {
         saved?()
     }
+    
+    override func document(_ url: URL) -> String { return _document }
 }

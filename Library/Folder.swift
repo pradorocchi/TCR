@@ -4,11 +4,11 @@ public class Folder {
     public init() { }
     
     public func documents(_ user: User) -> [Document] {
-        return user.bookmark.isEmpty ? [] : make(
+        return user.bookmark.isEmpty ? [] : load(
             (try! FileManager.default.contentsOfDirectory(at: user.bookmark.first!.0, includingPropertiesForKeys: [])))
     }
     
-    func make(_ url: [URL]) -> [Document] {
+    func load(_ url: [URL]) -> [Document] {
         return url.map ({
             (try? $0.resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory == true ? Directory($0) : {
                 switch $0.pathExtension {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2005542A2222A84E00DCFA33 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200554292222A84E00DCFA33 /* Scroll.swift */; };
+		200D6F102226AEF10080C709 /* TestFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D6F0F2226AEF10080C709 /* TestFolder.swift */; };
 		201B44DC2224092400BAB6E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201B44DB2224092400BAB6E4 /* User.swift */; };
 		201E3D272223D342001EE246 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D262223D342001EE246 /* Side.swift */; };
 		201E3D292223E290001EE246 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D282223E290001EE246 /* Label.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		200554292222A84E00DCFA33 /* Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
+		200D6F0F2226AEF10080C709 /* TestFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFolder.swift; sourceTree = "<group>"; };
 		201B44DB2224092400BAB6E4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		201E3D262223D342001EE246 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 		201E3D282223E290001EE246 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				2078E786222530CE0056C8D1 /* TestDocument.swift */,
 				20B2F4F322240E1E0043D283 /* TestStorage.swift */,
 				208CB034222404A700787DAA /* TestUser.swift */,
+				200D6F0F2226AEF10080C709 /* TestFolder.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				2078E787222530CE0056C8D1 /* TestDocument.swift in Sources */,
 				208CB035222404A700787DAA /* TestUser.swift in Sources */,
 				20B2F4F422240E1E0043D283 /* TestStorage.swift in Sources */,
+				200D6F102226AEF10080C709 /* TestFolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

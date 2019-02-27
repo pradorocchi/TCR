@@ -3,26 +3,34 @@ import XCTest
 
 class TestDocument: XCTestCase {
     private var folder: Folder!
+    private var storage: TestStorage!
     
     override func setUp() {
+        storage = TestStorage()
+        Storage.shared = storage
         folder = Folder()
     }
     
+    func testLoadFromStorage() {
+        storage._document = "hello world"
+        XCTAssertEqual("hello world", Document(URL(fileURLWithPath: String())).content)
+    }
+    
     func testMakeDirectory() {
-        XCTAssertTrue(folder.make([URL(fileURLWithPath: NSHomeDirectory())]).first is Directory)
-        XCTAssertFalse(folder.make([URL(fileURLWithPath: "hello.world")]).first is Directory)
+        XCTAssertTrue(folder.load([URL(fileURLWithPath: NSHomeDirectory())]).first is Directory)
+        XCTAssertFalse(folder.load([URL(fileURLWithPath: "hello.world")]).first is Directory)
     }
     
     func testMd() {
-        XCTAssertTrue(folder.make([URL(fileURLWithPath: "hello.md")]).first is Md)
+        XCTAssertTrue(folder.load([URL(fileURLWithPath: "hello.md")]).first is Md)
     }
     
     func testName() {
-        XCTAssertEqual("hello.md", folder.make([URL(fileURLWithPath: "is/fake/hello.md")]).first?.name)
+        XCTAssertEqual("hello.md", folder.load([URL(fileURLWithPath: "is/fake/hello.md")]).first?.name)
     }
     
     func testSort() {
-        let documents = folder.make([URL(fileURLWithPath: "b"), URL(fileURLWithPath: "a")])
+        let documents = folder.load([URL(fileURLWithPath: "b"), URL(fileURLWithPath: "a")])
         XCTAssertEqual("a", documents.first?.name)
         XCTAssertEqual("b", documents.last?.name)
     }
