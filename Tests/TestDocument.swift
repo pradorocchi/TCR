@@ -38,4 +38,9 @@ class TestDocument: XCTestCase {
         XCTAssertEqual("a", documents.first?.name)
         XCTAssertEqual("b", documents.last?.name)
     }
+    
+    func testSortDirectories() {
+        let documents = folder.load([URL(fileURLWithPath: NSHomeDirectory()), URL(fileURLWithPath: "zzzzzz")])
+        XCTAssertEqual("zzzzzz", documents.first?.name)
+    }
 }

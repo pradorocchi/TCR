@@ -14,9 +14,7 @@ class TestStorage: Storage {
         return _user
     }
     
-    override func save(_ user: User) {
-        saved?()
-    }
-    
+    override func save(_ user: User) { saved?() }
     override func document(_ url: URL) -> String { return _document }
+    override func save(_ editable: Editable) { saved?() }
 }

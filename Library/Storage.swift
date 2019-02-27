@@ -19,4 +19,8 @@ class Storage {
             $0 == nil ? String() : String(decoding: $0!, as: UTF8.self)
         } (try? Data(contentsOf: url, options: .alwaysMapped))
     }
+    
+    func save(_ editable: Editable) {
+        queue.async { try! Data(editable.content.utf8).write(to: editable.url, options: .atomic) }
+    }
 }
