@@ -3,7 +3,6 @@ import TCR
 
 class Scroll: NSScrollView {
     static let shared = Scroll()
-    private weak var document: TCR.Document!
     
     private init() {
         super.init(frame: .zero)
@@ -17,14 +16,14 @@ class Scroll: NSScrollView {
     required init?(coder: NSCoder) { return nil }
     
     func open(_ document: TCR.Document) {
-        self.document = document
         switch document {
-        case is Directory: configureDirectory()
-        default: configureDefault()
+        case let document as Directory: configure(document)
+        case let document as Editable: configure(document)
+        default: break
         }
     }
     
-    private func configureDefault() {
+    private func configure(_ document: Editable) {
         let text = Text()
         let ruler = Ruler(text, layout: text.layoutManager as! Layout)
         text.ruler = ruler
@@ -38,14 +37,14 @@ class Scroll: NSScrollView {
         text.heightAnchor.constraint(greaterThanOrEqualTo: heightAnchor).isActive = true
     }
     
-    private func configureDirectory() {
+    private func configure(_ document: Directory) {
         documentView = NSView()
         documentView!.translatesAutoresizingMaskIntoConstraints = false
         verticalRulerView = nil
         rulersVisible = false
         verticalScrollElasticity = .none
         
-        let label = Label(document.content, color: NSColor(white: 1, alpha: 0.5), font:
+        let label = Label(document.name, color: NSColor(white: 1, alpha: 0.5), font:
             .systemFont(ofSize: 30, weight: .bold), align: .center)
         documentView!.addSubview(label)
         

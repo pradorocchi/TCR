@@ -13,7 +13,7 @@ class TestDocument: XCTestCase {
     
     func testLoadFromStorage() {
         storage._document = "hello world"
-        XCTAssertEqual("hello world", Document(URL(fileURLWithPath: String())).content)
+        XCTAssertEqual("hello world", Editable(URL(fileURLWithPath: String())).content)
     }
     
     func testMakeDirectory() {
@@ -23,6 +23,10 @@ class TestDocument: XCTestCase {
     
     func testMd() {
         XCTAssertTrue(folder.load([URL(fileURLWithPath: "hello.md")]).first is Md)
+    }
+    
+    func testGeneric() {
+        XCTAssertTrue(folder.load([URL(fileURLWithPath: "hello")]).first is Editable)
     }
     
     func testName() {

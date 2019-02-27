@@ -13,7 +13,7 @@ public class Folder {
             (try? $0.resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory == true ? Directory($0) : {
                 switch $0.pathExtension {
                 case "md": return Md($0)
-                default: return Document($0)
+                default: return Editable($0)
                 }
             } ($0) as Document }).sorted(by: { $0.name.compare($1.name, options: .caseInsensitive) == .orderedAscending })
     }

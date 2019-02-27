@@ -1,3 +1,9 @@
+import Foundation
+
 public class Directory: Document {
-    public override var content: String { return name + "/" }
+    public let name: String
+    
+    init(_ url: URL) {
+        name = url.lastPathComponent + "/"
+    }
 }

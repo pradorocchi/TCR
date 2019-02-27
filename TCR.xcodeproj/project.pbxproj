@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2005542A2222A84E00DCFA33 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200554292222A84E00DCFA33 /* Scroll.swift */; };
 		200D6F102226AEF10080C709 /* TestFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D6F0F2226AEF10080C709 /* TestFolder.swift */; };
+		200D6F122226B9AF0080C709 /* Editable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D6F112226B9AF0080C709 /* Editable.swift */; };
 		201B44DC2224092400BAB6E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201B44DB2224092400BAB6E4 /* User.swift */; };
 		201E3D272223D342001EE246 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D262223D342001EE246 /* Side.swift */; };
 		201E3D292223E290001EE246 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D282223E290001EE246 /* Label.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		200554292222A84E00DCFA33 /* Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
 		200D6F0F2226AEF10080C709 /* TestFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFolder.swift; sourceTree = "<group>"; };
+		200D6F112226B9AF0080C709 /* Editable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editable.swift; sourceTree = "<group>"; };
 		201B44DB2224092400BAB6E4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		201E3D262223D342001EE246 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 		201E3D282223E290001EE246 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				2078E788222531910056C8D1 /* Directory.swift */,
 				2078E78422252FDA0056C8D1 /* Document.swift */,
+				200D6F112226B9AF0080C709 /* Editable.swift */,
 				20C6222F2226929200BDC6C1 /* Folder.swift */,
 				2078E78A222539D20056C8D1 /* Md.swift */,
 				20B2F4F122240C110043D283 /* Storage.swift */,
@@ -188,9 +191,9 @@
 			children = (
 				208CB036222404A700787DAA /* Tests.plist */,
 				2078E786222530CE0056C8D1 /* TestDocument.swift */,
+				200D6F0F2226AEF10080C709 /* TestFolder.swift */,
 				20B2F4F322240E1E0043D283 /* TestStorage.swift */,
 				208CB034222404A700787DAA /* TestUser.swift */,
-				200D6F0F2226AEF10080C709 /* TestFolder.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				200D6F122226B9AF0080C709 /* Editable.swift in Sources */,
 				201B44DC2224092400BAB6E4 /* User.swift in Sources */,
 				20B2F4F222240C110043D283 /* Storage.swift in Sources */,
 				2078E78522252FDA0056C8D1 /* Document.swift in Sources */,

@@ -1,3 +1,1 @@
-class Md: Document {
-    
-}
+class Md: Editable { }
