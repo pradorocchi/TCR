@@ -20,10 +20,5 @@ public class User: Codable {
         } (try? Storage.shared.user())
     }
     
-    public var documents: [Document] {
-        return bookmark.isEmpty ? [] : Document.make(
-            (try! FileManager.default.contentsOfDirectory(at: bookmark.first!.0, includingPropertiesForKeys: [])))
-    }
-    
     private func save() { Storage.shared.save(self) }
 }

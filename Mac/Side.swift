@@ -1,4 +1,5 @@
 import AppKit
+import TCR
 
 class Side: NSScrollView {
     static let shared = Side()
@@ -8,6 +9,7 @@ class Side: NSScrollView {
     private weak var link: Link!
     private let open = CGFloat(240)
     private let closed = CGFloat(70)
+    private let folder = Folder()
     
     private init() {
         super.init(frame: .zero)
@@ -81,7 +83,7 @@ class Side: NSScrollView {
         link.attributedTitle = NSAttributedString(string: App.shared.user.folder ?? .local("Side.select"), attributes:
             [.font: NSFont.systemFont(ofSize: 14, weight: .bold), .foregroundColor: NSColor(white: 1, alpha: 0.7)])
         var top = self.top.bottomAnchor
-        App.shared.user.documents.forEach {
+        folder.documents(App.shared.user).forEach {
             let document = Document($0)
             documentView!.addSubview(document)
             
