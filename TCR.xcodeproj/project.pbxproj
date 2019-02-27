@@ -36,6 +36,7 @@
 		20B2F4F422240E1E0043D283 /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F322240E1E0043D283 /* TestStorage.swift */; };
 		20B2F4F6222420840043D283 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F5222420840043D283 /* Document.swift */; };
 		20C6222E22267FCB00BDC6C1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6222C22267F6A00BDC6C1 /* Settings.swift */; };
+		20C622302226929200BDC6C1 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6222F2226929200BDC6C1 /* Folder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		20B2F4F322240E1E0043D283 /* TestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
 		20B2F4F5222420840043D283 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		20C6222C22267F6A00BDC6C1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		20C6222F2226929200BDC6C1 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				2078E78A222539D20056C8D1 /* Md.swift */,
 				20B2F4F122240C110043D283 /* Storage.swift */,
 				201B44DB2224092400BAB6E4 /* User.swift */,
+				20C6222F2226929200BDC6C1 /* Folder.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				2078E78522252FDA0056C8D1 /* Document.swift in Sources */,
 				2078E78B222539D20056C8D1 /* Md.swift in Sources */,
 				2078E789222531910056C8D1 /* Directory.swift in Sources */,
+				20C622302226929200BDC6C1 /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,6 @@ class Scroll: NSScrollView {
         drawsBackground = false
         hasVerticalScroller = true
         verticalScroller!.controlSize = .mini
-        verticalScrollElasticity = .allowed
         horizontalScrollElasticity = .none
     }
     
@@ -33,6 +32,7 @@ class Scroll: NSScrollView {
         documentView = text
         verticalRulerView = ruler
         rulersVisible = true
+        verticalScrollElasticity = .allowed
         
         text.widthAnchor.constraint(equalTo: widthAnchor, constant: -ruler.ruleThickness).isActive = true
         text.heightAnchor.constraint(greaterThanOrEqualTo: heightAnchor).isActive = true
@@ -43,8 +43,16 @@ class Scroll: NSScrollView {
         documentView!.translatesAutoresizingMaskIntoConstraints = false
         verticalRulerView = nil
         rulersVisible = false
+        verticalScrollElasticity = .none
+        
+        let label = Label(document.content, color: NSColor(white: 1, alpha: 0.5), font:
+            .systemFont(ofSize: 30, weight: .bold), align: .center)
+        documentView!.addSubview(label)
         
         documentView!.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         documentView!.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        
+        label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
 }
