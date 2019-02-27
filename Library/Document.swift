@@ -11,9 +11,18 @@ public class Document {
             } ($0) as Document }).sorted(by: { $0.name.compare($1.name, options: .caseInsensitive) == .orderedAscending })
     }
     
-    public let name: String
+    public var editable: Bool { return true }
+    public var ruler: Bool { return true }
+    public var name: String { return url.lastPathComponent }
+    let url: URL
     
     init(_ url: URL) {
-        name = url.lastPathComponent
+        self.url = url
+    }
+    
+    public var content: String {
+        return {
+            $0 == nil ? String() : String(decoding: $0!, as: UTF8.self)
+        } (try? Data(contentsOf: url, options: .alwaysMapped))
     }
 }

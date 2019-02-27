@@ -3,19 +3,19 @@ import TCR
 
 class Document: NSControl {
     let document: TCR.Document
+    private weak var label: Label!
     
-    init(_ document: TCR.Document, target: AnyObject, action: Selector) {
+    init(_ document: TCR.Document) {
         self.document = document
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         wantsLayer = true
-        self.target = target
-        self.action = action
         
-        let label = Label(document.name, color: NSColor(white: 1, alpha: 0.7), font: .light(12))
+        let label = Label(document.name, font: .systemFont(ofSize: 12, weight: .light))
         label.lineBreakMode = .byCharWrapping
         label.maximumNumberOfLines = 2
         addSubview(label)
+        self.label = label
         
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         label.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
@@ -27,9 +27,15 @@ class Document: NSControl {
     
     required init?(coder: NSCoder) { return nil }
     
-    override func mouseDown(with: NSEvent) { sendAction(action, to: target) }
+    override func mouseDown(with: NSEvent) { sendAction(#selector(Side.shared.open(_:)), to: Side.shared) }
     
     func update() {
-        layer!.backgroundColor = Side.shared.selected === self ? NSColor.shade.cgColor : nil
+        if Side.shared.selected === self {
+            layer!.backgroundColor = NSColor.shade.cgColor
+            label.alphaValue = 0.9
+        } else {
+            layer!.backgroundColor = nil
+            label.alphaValue = 0.7
+        }
     }
 }

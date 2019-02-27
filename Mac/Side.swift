@@ -79,10 +79,10 @@ class Side: NSScrollView {
     func update() {
         documentView!.subviews.filter({ $0 is Document }).forEach({ $0.removeFromSuperview() })
         link.attributedTitle = NSAttributedString(string: App.shared.user.folder ?? .local("Side.select"), attributes:
-            [.font: NSFont.bold(14), .foregroundColor: NSColor(white: 1, alpha: 0.7)])
+            [.font: NSFont.systemFont(ofSize: 14, weight: .bold), .foregroundColor: NSColor(white: 1, alpha: 0.7)])
         var top = self.top.bottomAnchor
         App.shared.user.documents.forEach {
-            let document = Document($0, target: self, action: #selector(open(_:)))
+            let document = Document($0)
             documentView!.addSubview(document)
             
             document.widthAnchor.constraint(equalToConstant: open).isActive = true
@@ -96,8 +96,9 @@ class Side: NSScrollView {
     }
     
     @objc func open(_ item: Document) {
+        guard item !== selected else { return }
         selected = item
-//        Scroll.shared.open(item.url)
+        Scroll.shared.open(item.document)
     }
     
     @objc private func toggle(_ button: Button) {

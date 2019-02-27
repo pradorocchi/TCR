@@ -1,4 +1,5 @@
 import AppKit
+import TCR
 
 class Scroll: NSScrollView {
     static let shared = Scroll()
@@ -23,9 +24,9 @@ class Scroll: NSScrollView {
     
     required init?(coder: NSCoder) { return nil }
     
-    func open(_ url: URL) {
+    func open(_ document: TCR.Document) {
         documentView!.scrollToVisible(.zero)
-        Text.shared.string = String(decoding: try! Data(contentsOf: url, options: Data.ReadingOptions.alwaysMapped), as: UTF8.self)
+        Text.shared.string = document.content
         isHidden = false
     }
 }
