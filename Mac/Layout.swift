@@ -1,10 +1,9 @@
 import AppKit
 
 class Layout: NSLayoutManager, NSLayoutManagerDelegate {
-    static let shared = Layout()
     let padding = CGFloat(4)
     
-    private override init() {
+    override init() {
         super.init()
         delegate = self
     }

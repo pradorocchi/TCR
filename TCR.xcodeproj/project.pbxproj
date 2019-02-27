@@ -35,6 +35,7 @@
 		20B2F4F222240C110043D283 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F122240C110043D283 /* Storage.swift */; };
 		20B2F4F422240E1E0043D283 /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F322240E1E0043D283 /* TestStorage.swift */; };
 		20B2F4F6222420840043D283 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F5222420840043D283 /* Document.swift */; };
+		20C6222E22267FCB00BDC6C1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6222C22267F6A00BDC6C1 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		20B2F4F122240C110043D283 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		20B2F4F322240E1E0043D283 /* TestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
 		20B2F4F5222420840043D283 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		20C6222C22267F6A00BDC6C1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				201E3D332223F0AB001EE246 /* Link.swift */,
 				2097FCBF222199A500C2FC5E /* Ruler.swift */,
 				200554292222A84E00DCFA33 /* Scroll.swift */,
+				20C6222C22267F6A00BDC6C1 /* Settings.swift */,
 				201E3D262223D342001EE246 /* Side.swift */,
 				20498A2F22203C8C00DB4D71 /* Storage.swift */,
 				20498A2D22203C6700DB4D71 /* Text.swift */,
@@ -335,6 +338,7 @@
 				20498A292220388800DB4D71 /* App.swift in Sources */,
 				20498A3022203C8C00DB4D71 /* Storage.swift in Sources */,
 				201E3D342223F0AB001EE246 /* Link.swift in Sources */,
+				20C6222E22267FCB00BDC6C1 /* Settings.swift in Sources */,
 				201E3D272223D342001EE246 /* Side.swift in Sources */,
 				20B2F4F6222420840043D283 /* Document.swift in Sources */,
 				2097FCC0222199A500C2FC5E /* Ruler.swift in Sources */,

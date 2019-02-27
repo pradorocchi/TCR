@@ -11,8 +11,6 @@ public class Document {
             } ($0) as Document }).sorted(by: { $0.name.compare($1.name, options: .caseInsensitive) == .orderedAscending })
     }
     
-    public var editable: Bool { return true }
-    public var ruler: Bool { return true }
     public var name: String { return url.lastPathComponent }
     let url: URL
     

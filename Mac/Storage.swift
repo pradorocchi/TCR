@@ -1,15 +1,10 @@
 import AppKit
 
 class Storage: NSTextStorage {
-    static let shared = Storage()
-    var light = NSFont.systemFont(ofSize: 0)
-    var bold = NSFont.systemFont(ofSize: 0)
     override var string: String { return storage.string }
+    private let light = NSFont.light(Settings.font)
+    private let bold = NSFont.bold(Settings.font)
     private let storage = NSTextStorage()
-    
-    private override init() {super.init() }
-    required init?(coder: NSCoder) { return nil }
-    required init?(pasteboardPropertyList: Any, ofType: NSPasteboard.PasteboardType) { return nil }
     
     override func attributes(at: Int, effectiveRange: NSRangePointer?) -> [NSAttributedString.Key: Any] {
         return storage.attributes(at: at, effectiveRange: effectiveRange)
