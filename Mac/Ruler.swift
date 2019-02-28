@@ -1,12 +1,13 @@
 import AppKit
 
 class Ruler: NSRulerView {
+    static let thickness = CGFloat(40)
     private weak var text: Text!
     private weak var layout: Layout!
     
     init(_ text: Text, layout: Layout) {
         super.init(scrollView: nil, orientation: .verticalRuler)
-        ruleThickness = 40
+        ruleThickness = Ruler.thickness
         self.text = text
         self.layout = layout
     }

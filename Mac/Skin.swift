@@ -1,5 +1,5 @@
 import Foundation
 
-struct Settings {
+struct Skin {
     static var font = CGFloat(16)
 }

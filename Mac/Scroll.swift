@@ -34,6 +34,7 @@ class Scroll: NSScrollView {
         
         text.widthAnchor.constraint(equalTo: widthAnchor, constant: -ruler.ruleThickness).isActive = true
         text.heightAnchor.constraint(greaterThanOrEqualTo: heightAnchor).isActive = true
+        App.shared.makeFirstResponder(text)
     }
     
     private func configure(_ document: Directory) {

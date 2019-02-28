@@ -362,13 +362,13 @@
             <objects>
                 <viewController showSeguePresentationStyle="single" id="XfG-lQ-9wD" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="900" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1200" height="800"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="383" y="614"/>
+            <point key="canvasLocation" x="524" y="768"/>
         </scene>
     </scenes>
 </document>

@@ -2,8 +2,8 @@ import AppKit
 
 class Storage: NSTextStorage {
     override var string: String { return storage.string }
-    private let light = NSFont.light(Settings.font)
-    private let bold = NSFont.bold(Settings.font)
+    private let light = NSFont.light(Skin.font)
+    private let bold = NSFont.bold(Skin.font)
     private let storage = NSTextStorage()
     
     override func attributes(at: Int, effectiveRange: NSRangePointer?) -> [NSAttributedString.Key: Any] {

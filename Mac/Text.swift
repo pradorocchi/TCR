@@ -12,21 +12,20 @@ class Text: NSTextView {
             storage.addLayoutManager($1)
             $1.addTextContainer($0)
             $0.lineBreakMode = .byCharWrapping
-            $0.widthTracksTextView = true
             return $0
         } (NSTextContainer(), Layout()) )
         translatesAutoresizingMaskIntoConstraints = false
         allowsUndo = true
         drawsBackground = false
         isRichText = false
-        string = document.content
         insertionPointColor = .halo
-        font = .light(Settings.font)
+        font = .light(Skin.font)
+        string = document.content
         textContainerInset = NSSize(width: 20, height: 30)
         height = heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
         height.isActive = true
-        self.document = document
         adjust()
+        self.document = document
     }
     
     required init?(coder: NSCoder) { return nil }
@@ -47,9 +46,15 @@ class Text: NSTextView {
         }
     }
     
+    override func viewDidEndLiveResize() {
+        super.viewDidEndLiveResize()
+        DispatchQueue.main.async { [weak self] in self?.adjust() }
+    }
+    
     override func updateRuler() { ruler?.setNeedsDisplay(visibleRect) }
     
     private func adjust() {
+        textContainer!.size.width = Scroll.shared.frame.width - (textContainerInset.width * 2) - Ruler.thickness
         layoutManager!.ensureLayout(for: textContainer!)
         height.constant = layoutManager!.usedRect(for: textContainer!).size.height + (textContainerInset.height * 2)
         DispatchQueue.main.async { [weak self] in self?.updateRuler() }
