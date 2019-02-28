@@ -34,6 +34,7 @@
 		208CB037222404A700787DAA /* libLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 208CB0232224047300787DAA /* libLibrary.a */; };
 		208CB03F2224081800787DAA /* libLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 208CB0232224047300787DAA /* libLibrary.a */; };
 		2097FCC0222199A500C2FC5E /* Ruler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097FCBF222199A500C2FC5E /* Ruler.swift */; };
+		20A6D3532227E39C00A927B8 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A6D3522227E39C00A927B8 /* Bar.swift */; };
 		20B2F4F222240C110043D283 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F122240C110043D283 /* Storage.swift */; };
 		20B2F4F422240E1E0043D283 /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F322240E1E0043D283 /* TestStorage.swift */; };
 		20B2F4F6222420840043D283 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F4F5222420840043D283 /* Document.swift */; };
@@ -86,6 +87,7 @@
 		208CB034222404A700787DAA /* TestUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUser.swift; sourceTree = "<group>"; };
 		208CB036222404A700787DAA /* Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
 		2097FCBF222199A500C2FC5E /* Ruler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruler.swift; sourceTree = "<group>"; };
+		20A6D3522227E39C00A927B8 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		20B2F4F122240C110043D283 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		20B2F4F322240E1E0043D283 /* TestStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
 		20B2F4F5222420840043D283 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				20498A252220388800DB4D71 /* Mac.plist */,
 				20498A242220388800DB4D71 /* Mac.storyboard */,
 				20498A262220388800DB4D71 /* App.swift */,
+				20A6D3522227E39C00A927B8 /* Bar.swift */,
 				201E3D312223E5FB001EE246 /* Button.swift */,
 				20B2F4F5222420840043D283 /* Document.swift */,
 				20498A2B22203C2500DB4D71 /* Extensions.swift */,
@@ -353,6 +356,7 @@
 				2097FCC0222199A500C2FC5E /* Ruler.swift in Sources */,
 				20498A3222203C9F00DB4D71 /* Layout.swift in Sources */,
 				201E3D292223E290001EE246 /* Label.swift in Sources */,
+				20A6D3532227E39C00A927B8 /* Bar.swift in Sources */,
 				2005542A2222A84E00DCFA33 /* Scroll.swift in Sources */,
 				20498A2E22203C6700DB4D71 /* Text.swift in Sources */,
 				20498A2C22203C2500DB4D71 /* Extensions.swift in Sources */,

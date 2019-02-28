@@ -18,14 +18,19 @@ import TCR
         
         contentView!.addSubview(Scroll.shared)
         contentView!.addSubview(Side.shared)
+        contentView!.addSubview(Bar.shared)
         
         Side.shared.topAnchor.constraint(equalTo: contentView!.topAnchor).isActive = true
         Side.shared.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor).isActive = true
         Side.shared.leftAnchor.constraint(equalTo: contentView!.leftAnchor).isActive = true
         
+        Bar.shared.topAnchor.constraint(equalTo: contentView!.topAnchor).isActive = true
+        Bar.shared.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor).isActive = true
+        Bar.shared.leftAnchor.constraint(equalTo: Side.shared.rightAnchor).isActive = true
+        
         Scroll.shared.topAnchor.constraint(equalTo: contentView!.topAnchor).isActive = true
         Scroll.shared.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor).isActive = true
-        Scroll.shared.leftAnchor.constraint(equalTo: Side.shared.rightAnchor).isActive = true
+        Scroll.shared.leftAnchor.constraint(equalTo: Bar.shared.rightAnchor).isActive = true
         Scroll.shared.rightAnchor.constraint(equalTo: contentView!.rightAnchor).isActive = true
         
         DispatchQueue.global(qos: .background).async {

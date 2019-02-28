@@ -19,7 +19,7 @@ class Document: NSControl {
         self.label = label
         
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        label.leftAnchor.constraint(equalTo: leftAnchor, constant: 86).isActive = true
+        label.leftAnchor.constraint(equalTo: leftAnchor, constant: 24).isActive = true
         label.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         
         heightAnchor.constraint(equalToConstant: 38).isActive = true
@@ -36,7 +36,7 @@ class Document: NSControl {
             label.alphaValue = 0.9
         } else {
             layer!.backgroundColor = nil
-            label.alphaValue = 0.7
+            label.alphaValue = 0.6
         }
     }
 }
