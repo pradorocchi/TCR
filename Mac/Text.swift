@@ -1,11 +1,12 @@
 import AppKit
+import TCR
 
 class Text: NSTextView {
-    override var string: String { didSet { adjust() } }
     weak var ruler: Ruler?
+    private weak var document: Editable?
     private weak var height: NSLayoutConstraint!
     
-    init() {
+    init(_ document: Editable) {
         let storage = Storage()
         super.init(frame: .zero, textContainer: {
             storage.addLayoutManager($1)
@@ -18,11 +19,14 @@ class Text: NSTextView {
         allowsUndo = true
         drawsBackground = false
         isRichText = false
+        string = document.content
         insertionPointColor = .halo
         font = .light(Settings.font)
         textContainerInset = NSSize(width: 20, height: 30)
         height = heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
         height.isActive = true
+        self.document = document
+        adjust()
     }
     
     required init?(coder: NSCoder) { return nil }
@@ -35,7 +39,12 @@ class Text: NSTextView {
     
     override func didChangeText() {
         super.didChangeText()
+        document?.content = string
         adjust()
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let document = self?.document else { return }
+            Side.shared.folder.save(document)
+        }
     }
     
     override func updateRuler() { ruler?.setNeedsDisplay(visibleRect) }

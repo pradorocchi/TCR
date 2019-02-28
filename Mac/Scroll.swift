@@ -24,10 +24,9 @@ class Scroll: NSScrollView {
     }
     
     private func configure(_ document: Editable) {
-        let text = Text()
+        let text = Text(document)
         let ruler = Ruler(text, layout: text.layoutManager as! Layout)
         text.ruler = ruler
-        text.string = document.content
         documentView = text
         verticalRulerView = ruler
         rulersVisible = true

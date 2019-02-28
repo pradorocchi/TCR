@@ -4,12 +4,12 @@ import TCR
 class Side: NSScrollView {
     static let shared = Side()
     weak var selected: Document? { didSet { oldValue?.update(); selected?.update() } }
+    let folder = Folder()
     private weak var width: NSLayoutConstraint!
     private weak var top: NSView!
     private weak var link: Link!
     private let open = CGFloat(240)
     private let closed = CGFloat(70)
-    private let folder = Folder()
     
     private init() {
         super.init(frame: .zero)
