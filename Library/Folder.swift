@@ -21,6 +21,14 @@ public class Folder {
         schedule()
     }
     
+    public func saveAll() {
+        schedule(.distantFuture)
+        queue.removeAll {
+            Storage.shared.save($0)
+            return true
+        }
+    }
+    
     func load(_ url: [URL]) -> [Document] {
         return url.map ({
             (try? $0.resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory == true ? Directory($0) : {

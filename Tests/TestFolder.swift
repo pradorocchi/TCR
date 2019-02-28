@@ -24,7 +24,7 @@ class TestFolder: XCTestCase {
         waitForExpectations(timeout: 1)
     }
     
-    func testSaveAll() {
+    func testSaveMultiple() {
         var count = 0
         let expect = expectation(description: String())
         storage.saved = {
@@ -43,5 +43,25 @@ class TestFolder: XCTestCase {
         folder.save(editable)
         folder.save(editable)
         XCTAssertEqual(1, folder.queue.count)
+    }
+    
+    func testSaveAll() {
+        let expect = expectation(description: String())
+        folder.timeout = 1000
+        folder.save(editable)
+        folder.save(Editable(URL(fileURLWithPath: "file.json")))
+        folder.save(Editable(URL(fileURLWithPath: "A.json")))
+        folder.save(Editable(URL(fileURLWithPath: "B.json")))
+        folder.save(Editable(URL(fileURLWithPath: "C.json")))
+        folder.save(Editable(URL(fileURLWithPath: "D.json")))
+        var count = 0
+        storage.saved = {
+            count += 1
+            if count == 6 {
+                expect.fulfill()
+            }
+        }
+        folder.saveAll()
+        waitForExpectations(timeout: 1)
     }
 }
