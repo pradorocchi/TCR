@@ -10,18 +10,19 @@ class Document: NSControl {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         wantsLayer = true
+        layer!.cornerRadius = 6
         
         let label = Label(document.name, font: .systemFont(ofSize: 12, weight: .light))
-        label.lineBreakMode = .byCharWrapping
-        label.maximumNumberOfLines = 2
+        label.lineBreakMode = .byTruncatingTail
+        label.maximumNumberOfLines = 1
         addSubview(label)
         self.label = label
         
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        label.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
-        label.rightAnchor.constraint(equalTo: rightAnchor, constant: -80).isActive = true
+        label.leftAnchor.constraint(equalTo: leftAnchor, constant: 86).isActive = true
+        label.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         
-        heightAnchor.constraint(equalToConstant: 50).isActive = true
+        heightAnchor.constraint(equalToConstant: 38).isActive = true
         update()
     }
     
