@@ -19,6 +19,7 @@ class Scroll: NSScrollView {
         clear()
         switch document {
         case let document as TCR.Directory: configure(document)
+        case let document as TCR.Image: configure(document)
         case let document as Editable: configure(document)
         default: break
         }
@@ -43,6 +44,12 @@ class Scroll: NSScrollView {
         text.widthAnchor.constraint(equalTo: widthAnchor, constant: -ruler.ruleThickness).isActive = true
         text.heightAnchor.constraint(greaterThanOrEqualTo: heightAnchor).isActive = true
         App.shared.makeFirstResponder(text)
+    }
+    
+    private func configure(_ document: TCR.Image) {
+        documentView = Image(document)
+        documentView!.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        documentView!.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
     }
     
     private func configure(_ document: TCR.Directory) {

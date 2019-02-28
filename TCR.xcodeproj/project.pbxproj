@@ -18,6 +18,8 @@
 		201E3D302223E5A9001EE246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201E3D2F2223E5A9001EE246 /* Assets.xcassets */; };
 		201E3D322223E5FB001EE246 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D312223E5FB001EE246 /* Button.swift */; };
 		201E3D342223F0AB001EE246 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D332223F0AB001EE246 /* Link.swift */; };
+		20228DBE22282CAE00416BE1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20228DBD22282CAE00416BE1 /* Image.swift */; };
+		20228DC022282E1000416BE1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20228DBF22282E1000416BE1 /* Image.swift */; };
 		20498A272220388800DB4D71 /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20498A242220388800DB4D71 /* Mac.storyboard */; };
 		20498A292220388800DB4D71 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A262220388800DB4D71 /* App.swift */; };
 		20498A2C22203C2500DB4D71 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A2B22203C2500DB4D71 /* Extensions.swift */; };
@@ -67,6 +69,8 @@
 		201E3D2F2223E5A9001EE246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		201E3D312223E5FB001EE246 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		201E3D332223F0AB001EE246 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		20228DBD22282CAE00416BE1 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		20228DBF22282E1000416BE1 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		20498A1F2220387400DB4D71 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		20498A202220387400DB4D71 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		20498A212220387400DB4D71 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				2078E78422252FDA0056C8D1 /* Document.swift */,
 				200D6F112226B9AF0080C709 /* Editable.swift */,
 				20C6222F2226929200BDC6C1 /* Folder.swift */,
+				20228DBD22282CAE00416BE1 /* Image.swift */,
 				2078E78A222539D20056C8D1 /* Md.swift */,
 				20A6D3542227EB0500A927B8 /* Shell.swift */,
 				20B2F4F122240C110043D283 /* Storage.swift */,
@@ -169,16 +174,17 @@
 				20498A262220388800DB4D71 /* App.swift */,
 				20A6D3522227E39C00A927B8 /* Bar.swift */,
 				201E3D312223E5FB001EE246 /* Button.swift */,
-				20B2F4F5222420840043D283 /* Document.swift */,
 				20A6D35822280A7400A927B8 /* Directory.swift */,
+				20B2F4F5222420840043D283 /* Document.swift */,
 				20498A2B22203C2500DB4D71 /* Extensions.swift */,
+				20228DBF22282E1000416BE1 /* Image.swift */,
 				201E3D282223E290001EE246 /* Label.swift */,
 				20498A3122203C9F00DB4D71 /* Layout.swift */,
 				201E3D332223F0AB001EE246 /* Link.swift */,
 				2097FCBF222199A500C2FC5E /* Ruler.swift */,
 				200554292222A84E00DCFA33 /* Scroll.swift */,
-				20C6222C22267F6A00BDC6C1 /* Skin.swift */,
 				201E3D262223D342001EE246 /* Side.swift */,
+				20C6222C22267F6A00BDC6C1 /* Skin.swift */,
 				20498A2F22203C8C00DB4D71 /* Storage.swift */,
 				20498A2D22203C6700DB4D71 /* Text.swift */,
 			);
@@ -366,6 +372,7 @@
 				20498A3222203C9F00DB4D71 /* Layout.swift in Sources */,
 				201E3D292223E290001EE246 /* Label.swift in Sources */,
 				20A6D3532227E39C00A927B8 /* Bar.swift in Sources */,
+				20228DC022282E1000416BE1 /* Image.swift in Sources */,
 				2005542A2222A84E00DCFA33 /* Scroll.swift in Sources */,
 				20498A2E22203C6700DB4D71 /* Text.swift in Sources */,
 				20498A2C22203C2500DB4D71 /* Extensions.swift in Sources */,
@@ -379,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				200D6F122226B9AF0080C709 /* Editable.swift in Sources */,
+				20228DBE22282CAE00416BE1 /* Image.swift in Sources */,
 				201B44DC2224092400BAB6E4 /* User.swift in Sources */,
 				20B2F4F222240C110043D283 /* Storage.swift in Sources */,
 				2078E78522252FDA0056C8D1 /* Document.swift in Sources */,
