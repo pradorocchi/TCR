@@ -13,7 +13,7 @@ class Document: NSControl {
         layer!.cornerRadius = 6
         
         let label = Label(document.name, font: .systemFont(ofSize: 12, weight: .light))
-        label.lineBreakMode = .byTruncatingTail
+        label.lineBreakMode = .byTruncatingMiddle
         label.maximumNumberOfLines = 1
         addSubview(label)
         self.label = label

@@ -16,11 +16,19 @@ class Scroll: NSScrollView {
     required init?(coder: NSCoder) { return nil }
     
     func open(_ document: TCR.Document) {
+        clear()
         switch document {
-        case let document as Directory: configure(document)
+        case let document as TCR.Directory: configure(document)
         case let document as Editable: configure(document)
         default: break
         }
+    }
+    
+    func clear() {
+        documentView = nil
+        verticalRulerView = nil
+        rulersVisible = false
+        verticalScrollElasticity = .none
     }
     
     private func configure(_ document: Editable) {
@@ -37,21 +45,9 @@ class Scroll: NSScrollView {
         App.shared.makeFirstResponder(text)
     }
     
-    private func configure(_ document: Directory) {
-        documentView = NSView()
-        documentView!.translatesAutoresizingMaskIntoConstraints = false
-        verticalRulerView = nil
-        rulersVisible = false
-        verticalScrollElasticity = .none
-        
-        let label = Label(document.name, color: NSColor(white: 1, alpha: 0.5), font:
-            .systemFont(ofSize: 30, weight: .bold), align: .center)
-        documentView!.addSubview(label)
-        
+    private func configure(_ document: TCR.Directory) {
+        documentView = Directory(document)
         documentView!.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         documentView!.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
-        
-        label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
 }

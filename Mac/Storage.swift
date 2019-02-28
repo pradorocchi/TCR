@@ -19,7 +19,7 @@ class Storage: NSTextStorage {
         storage.setAttributes(attrs, range: range)
     }
     
-    override func processEditing() {
+    /*override func processEditing() {
         super.processEditing()
         storage.removeAttribute(.font, range: NSMakeRange(0, storage.length))
         string.indices.reduce(into: (string.startIndex, light, [(NSFont, Range)]()) ) {
@@ -30,5 +30,5 @@ class Storage: NSTextStorage {
                 $0.0 = $1
                 $0.1 = string[$1] == "#" ? bold : light
             } }.2.forEach { storage.addAttribute(.font, value: $0.0, range: NSRange($0.1, in: string)) }
-    }
+    }*/
 }

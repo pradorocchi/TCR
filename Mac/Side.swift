@@ -83,6 +83,7 @@ class Side: NSScrollView {
         panel.message = .local("Side.open")
         panel.begin {
             if $0 == .OK {
+                Scroll.shared.clear()
                 App.shared.user.bookmark = [panel.url!: try! panel.url!.bookmarkData(options: .withSecurityScope)]
                 self.update()
             }
