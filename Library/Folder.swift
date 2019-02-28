@@ -40,6 +40,7 @@ public class Folder {
             (try? $0.resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory == true ? Directory($0) : {
                 switch $0.pathExtension {
                 case "md": return Md($0)
+                case "pdf": return Pdf($0)
                 case "png", "jpg", "jpeg", "gif", "bmp": return Image($0)
                 default: return Editable($0)
                 }

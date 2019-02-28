@@ -33,6 +33,10 @@ class TestDocument: XCTestCase {
                      URL(fileURLWithPath: "hello.bmp")]).forEach { XCTAssertTrue($0 is Image) }
     }
     
+    func testPdf() {
+        XCTAssertTrue(folder.load([URL(fileURLWithPath: "hello.pdf")]).first is Pdf)
+    }
+    
     func testGeneric() {
         XCTAssertTrue(folder.load([URL(fileURLWithPath: "hello")]).first is Editable)
     }

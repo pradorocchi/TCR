@@ -1,9 +1,8 @@
 import Foundation
 
-public class Directory: Document {
-    public let name: String
-    
-    init(_ url: URL) {
-        name = url.lastPathComponent + "/"
+public class Directory: NonEditable {
+    override init(_ url: URL) {
+        super.init(url)
+        name += "/"
     }
 }

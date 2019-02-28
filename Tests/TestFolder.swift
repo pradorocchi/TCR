@@ -35,7 +35,7 @@ class TestFolder: XCTestCase {
         }
         folder.save(editable)
         folder.save(Editable(URL(fileURLWithPath: "file.json")))
-        waitForExpectations(timeout: 1)
+        waitForExpectations(timeout: 2)
     }
     
     func testReplaceOnSave() {

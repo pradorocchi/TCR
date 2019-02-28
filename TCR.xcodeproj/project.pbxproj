@@ -20,6 +20,9 @@
 		201E3D342223F0AB001EE246 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E3D332223F0AB001EE246 /* Link.swift */; };
 		20228DBE22282CAE00416BE1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20228DBD22282CAE00416BE1 /* Image.swift */; };
 		20228DC022282E1000416BE1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20228DBF22282E1000416BE1 /* Image.swift */; };
+		20228DC222282FC700416BE1 /* Pdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20228DC122282FC700416BE1 /* Pdf.swift */; };
+		20228DC422282FEF00416BE1 /* NonEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20228DC322282FEF00416BE1 /* NonEditable.swift */; };
+		20228DC62228317100416BE1 /* Pdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20228DC52228317100416BE1 /* Pdf.swift */; };
 		20498A272220388800DB4D71 /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20498A242220388800DB4D71 /* Mac.storyboard */; };
 		20498A292220388800DB4D71 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A262220388800DB4D71 /* App.swift */; };
 		20498A2C22203C2500DB4D71 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20498A2B22203C2500DB4D71 /* Extensions.swift */; };
@@ -71,6 +74,9 @@
 		201E3D332223F0AB001EE246 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		20228DBD22282CAE00416BE1 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		20228DBF22282E1000416BE1 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		20228DC122282FC700416BE1 /* Pdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pdf.swift; sourceTree = "<group>"; };
+		20228DC322282FEF00416BE1 /* NonEditable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonEditable.swift; sourceTree = "<group>"; };
+		20228DC52228317100416BE1 /* Pdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pdf.swift; sourceTree = "<group>"; };
 		20498A1F2220387400DB4D71 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		20498A202220387400DB4D71 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		20498A212220387400DB4D71 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -141,6 +147,8 @@
 				20C6222F2226929200BDC6C1 /* Folder.swift */,
 				20228DBD22282CAE00416BE1 /* Image.swift */,
 				2078E78A222539D20056C8D1 /* Md.swift */,
+				20228DC322282FEF00416BE1 /* NonEditable.swift */,
+				20228DC122282FC700416BE1 /* Pdf.swift */,
 				20A6D3542227EB0500A927B8 /* Shell.swift */,
 				20B2F4F122240C110043D283 /* Storage.swift */,
 				201B44DB2224092400BAB6E4 /* User.swift */,
@@ -181,6 +189,7 @@
 				201E3D282223E290001EE246 /* Label.swift */,
 				20498A3122203C9F00DB4D71 /* Layout.swift */,
 				201E3D332223F0AB001EE246 /* Link.swift */,
+				20228DC52228317100416BE1 /* Pdf.swift */,
 				2097FCBF222199A500C2FC5E /* Ruler.swift */,
 				200554292222A84E00DCFA33 /* Scroll.swift */,
 				201E3D262223D342001EE246 /* Side.swift */,
@@ -373,6 +382,7 @@
 				201E3D292223E290001EE246 /* Label.swift in Sources */,
 				20A6D3532227E39C00A927B8 /* Bar.swift in Sources */,
 				20228DC022282E1000416BE1 /* Image.swift in Sources */,
+				20228DC62228317100416BE1 /* Pdf.swift in Sources */,
 				2005542A2222A84E00DCFA33 /* Scroll.swift in Sources */,
 				20498A2E22203C6700DB4D71 /* Text.swift in Sources */,
 				20498A2C22203C2500DB4D71 /* Extensions.swift in Sources */,
@@ -385,12 +395,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20228DC222282FC700416BE1 /* Pdf.swift in Sources */,
 				200D6F122226B9AF0080C709 /* Editable.swift in Sources */,
 				20228DBE22282CAE00416BE1 /* Image.swift in Sources */,
 				201B44DC2224092400BAB6E4 /* User.swift in Sources */,
 				20B2F4F222240C110043D283 /* Storage.swift in Sources */,
 				2078E78522252FDA0056C8D1 /* Document.swift in Sources */,
 				2078E78B222539D20056C8D1 /* Md.swift in Sources */,
+				20228DC422282FEF00416BE1 /* NonEditable.swift in Sources */,
 				2078E789222531910056C8D1 /* Directory.swift in Sources */,
 				20A6D3552227EB0500A927B8 /* Shell.swift in Sources */,
 				20C622302226929200BDC6C1 /* Folder.swift in Sources */,
