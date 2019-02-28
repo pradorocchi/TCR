@@ -1,8 +1,8 @@
 import Foundation
 
 public class Folder {
-    public var queue = [Editable]() { didSet { schedule() } }
     var timeout = TimeInterval(3)
+    private(set) var queue = [Editable]()
     private let timer = DispatchSource.makeTimerSource(queue: .global(qos: .background))
     
     public init() {
@@ -13,6 +13,12 @@ public class Folder {
     public func documents(_ user: User) -> [Document] {
         return user.bookmark.isEmpty ? [] : load(
             (try! FileManager.default.contentsOfDirectory(at: user.bookmark.first!.0, includingPropertiesForKeys: [])))
+    }
+    
+    public func save(_ editable: Editable) {
+        queue.removeAll(where: { $0 === editable })
+        queue.append(editable)
+        schedule()
     }
     
     func load(_ url: [URL]) -> [Document] {

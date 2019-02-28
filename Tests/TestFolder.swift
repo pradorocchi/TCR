@@ -20,22 +20,28 @@ class TestFolder: XCTestCase {
             XCTAssertTrue(self.folder.queue.isEmpty)
             expect.fulfill()
         }
-        folder.queue.append(editable)
+        folder.save(editable)
         waitForExpectations(timeout: 1)
     }
     
     func testSaveAll() {
-        let expectFirst = expectation(description: String())
-        let expectSecond = expectation(description: String())
+        var count = 0
+        let expect = expectation(description: String())
         storage.saved = {
-            if self.folder.queue.isEmpty {
-                expectSecond.fulfill()
-            } else {
-                expectFirst.fulfill()
+            count += 1
+            if count == 2 {
+                expect.fulfill()
             }
         }
-        folder.queue.append(editable)
-        folder.queue.append(Editable(URL(fileURLWithPath: "file.json")))
+        folder.save(editable)
+        folder.save(Editable(URL(fileURLWithPath: "file.json")))
         waitForExpectations(timeout: 1)
+    }
+    
+    func testReplaceOnSave() {
+        folder.timeout = 1000
+        folder.save(editable)
+        folder.save(editable)
+        XCTAssertEqual(1, folder.queue.count)
     }
 }
