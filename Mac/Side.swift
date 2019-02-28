@@ -26,9 +26,7 @@ class Side: NSScrollView {
         width.isActive = true
         
         let link = Link(String(), background: .clear, target: self, action: #selector(select))
-        link.keyEquivalent = "o"
         link.alignment = .left
-        link.keyEquivalentModifierMask = .command
         documentView!.addSubview(link)
         self.link = link
         
@@ -76,7 +74,7 @@ class Side: NSScrollView {
         }) { }
     }
     
-    @objc private func select() {
+    @objc func select() {
         let panel = NSOpenPanel()
         panel.canChooseFiles = false
         panel.canChooseDirectories = true
